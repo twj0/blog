@@ -1,0 +1,9 @@
+name = "blog-theme-anzhiyu"
+compatibility_date = "2024-08-28"
+
+[env.production]
+name = "blog-theme-anzhiyu"
+
+# Cloudflare Pages 配置
+# 这个文件主要用于本地开发和测试
+# 实际部署会使用 Cloudflare Pages 的 Web 界面配置

@@ -1,0 +1,44 @@
+{
+  "name": "blog-theme-anzhiyu",
+  "version": "1.0.0",
+  "description": "Personal blog using AnZhiYu theme, deployed on Cloudflare Pages",
+  "main": "index.js",
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server",
+    "dev": "hexo server --draft",
+    "new": "hexo new",
+    "install-theme": "npm install hexo-renderer-pug hexo-renderer-stylus --save"
+  },
+  "keywords": [
+    "hexo",
+    "blog",
+    "anzhiyu",
+    "cloudflare-pages"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "hexo": "^7.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-stylus": "^3.0.0",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-deployer-git": "^4.0.0"
+  },
+  "devDependencies": {
+    "hexo-cli": "^4.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/blog-theme-anzhiyu.git"
+  },
+  "homepage": "https://yourblog.pages.dev"
+}
