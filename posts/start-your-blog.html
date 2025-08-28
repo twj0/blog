@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>开始你的博客之旅 - 我的博客</title>
+    <meta name="description" content="使用安知鱼主题搭建个人博客，部署到Cloudflare Pages的完整指南">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">
+                <a href="../index.html" style="color: white; text-decoration: none;">🌟 我的博客</a>
+            </h1>
+            <p class="site-subtitle">基于安知鱼主题的个人博客</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <article class="post-card">
+                <header class="post-header">
+                    <h1 class="post-title">📝 开始你的博客之旅</h1>
+                    <div class="post-meta">
+                        <time datetime="2025-08-28">2025-08-28 10:32:00</time>
+                        <span class="tags">
+                            <span class="tag">博客</span>
+                            <span class="tag">Hexo</span>
+                            <span class="tag">Cloudflare</span>
+                        </span>
+                    </div>
+                </header>
+                
+                <div class="post-content">
+                    <h2>前言</h2>
+                    <p>今天开始搭建自己的个人博客，选择了安知鱼的 Hexo 主题，计划部署到 Cloudflare Pages 上。</p>
+
+                    <h2>技术栈选择</h2>
+                    <ul>
+                        <li><strong>静态站点生成器</strong>: Hexo</li>
+                        <li><strong>主题</strong>: hexo-theme-anzhiyu</li>
+                        <li><strong>内容管理</strong>: GitHub 仓库</li>
+                        <li><strong>部署平台</strong>: Cloudflare Pages</li>
+                        <li><strong>域名</strong>: 自定义域名</li>
+                    </ul>
+
+                    <h2>项目结构</h2>
+                    <pre><code>blog-theme-anzhiyu/
+├── hexo-theme-anzhiyu/     # 安知鱼主题文件
+├── blog/                   # 博客文章目录
+│   └── 2025/
+│       └── 08/
+├── posts/                  # 静态文章页面
+├── css/                    # 样式文件
+└── index.html             # 主页</code></pre>
+
+                    <h2>部署优势</h2>
+                    <ul>
+                        <li>🚀 <strong>极速部署</strong> - 直接部署静态文件，无需构建过程</li>
+                        <li>⚡ <strong>快速访问</strong> - Cloudflare 全球 CDN 加速</li>
+                        <li>💰 <strong>零成本</strong> - 完全免费的解决方案</li>
+                        <li>🔄 <strong>自动更新</strong> - 推送到 GitHub 自动部署</li>
+                        <li>🛡️ <strong>高可用</strong> - Cloudflare 的可靠性保障</li>
+                    </ul>
+
+                    <h2>下一步计划</h2>
+                    <ol>
+                        <li>✅ 初始化 Hexo 项目</li>
+                        <li>✅ 配置安知鱼主题</li>
+                        <li>✅ 创建静态页面</li>
+                        <li>✅ 配置 Cloudflare Pages 部署</li>
+                        <li>⏳ 绑定自定义域名</li>
+                        <li>⏳ 添加更多功能</li>
+                    </ol>
+
+                    <h2>写作指南</h2>
+                    <p>现在你可以通过以下方式添加新内容：</p>
+                    
+                    <h3>方法一：直接创建 HTML 文件</h3>
+                    <p>在 <code>posts/</code> 目录创建新的 HTML 文件，参考现有文章的格式。</p>
+
+                    <h3>方法二：使用 Markdown</h3>
+                    <p>在 <code>blog/</code> 目录添加 Markdown 文件，然后转换为 HTML。</p>
+
+                    <h3>方法三：集成 Hexo</h3>
+                    <p>后续可以完整集成 Hexo 系统，实现自动化的文章管理。</p>
+
+                    <h2>更新日志</h2>
+                    <ul>
+                        <li><strong>2025-08-28 10:32</strong>: 项目初始化，创建第一篇博客文章</li>
+                        <li><strong>2025-08-28 11:00</strong>: 完成静态页面设计</li>
+                        <li><strong>2025-08-28 12:00</strong>: 成功部署到 Cloudflare Pages</li>
+                    </ul>
+
+                    <p><em>这是一个持续更新的项目，我会定期在这里记录博客搭建和维护的过程。</em></p>
+                </div>
+                
+                <footer class="post-footer">
+                    <div class="post-nav">
+                        <a href="hello-world.html" class="nav-link">← 上一篇</a>
+                        <a href="direct-deploy.html" class="nav-link">下一篇 →</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 我的博客. Powered by <a href="https://hexo.io/">Hexo</a> & <a href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">AnZhiYu</a></p>
+            <p>直接部署在 <a href="https://pages.cloudflare.com/">Cloudflare Pages</a> 上</p>
+        </div>
+    </footer>
+
+    <style>
+        .post-content {
+            line-height: 1.8;
+        }
+        
+        .post-content h2 {
+            color: #333;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .post-content h3 {
+            color: #555;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            margin: 0.5rem 0;
+        }
+        
+        .post-content code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .post-content pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        .post-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .post-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .post-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>
