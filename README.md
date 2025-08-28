@@ -54,7 +54,6 @@ blog-theme-anzhiyu/
 ```bash
 # 克隆仓库
 git clone https://github.com/twj0/blog.git
-cd blog-theme-anzhiyu
 
 # 安装依赖
 npm install
