@@ -21,9 +21,11 @@
 3. **连接你的 GitHub 账户**
 4. **选择 Fork 的仓库**
 5. **配置构建设置**:
+   - 框架预设: `None` 或 `Static`
    - 构建命令: `chmod +x build.sh && ./build.sh`
    - 构建输出目录: `public`
-   - Node.js 版本: `18`
+   - 根目录: `/`
+   - 环境变量: `NODE_VERSION=18`
 
 ## 📁 项目结构
 

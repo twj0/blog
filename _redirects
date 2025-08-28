@@ -1,0 +1,7 @@
+# Cloudflare Pages Redirects Configuration
+
+# Redirect old URLs (if any)
+# /old-path/* /new-path/:splat 301
+
+# Handle 404s
+/* /index.html 200
