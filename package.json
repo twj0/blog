@@ -4,8 +4,8 @@
   "description": "Personal blog using AnZhiYu theme, deployed on Cloudflare Pages",
   "main": "index.js",
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
+    "build": "chmod +x build.sh && ./build.sh",
+    "clean": "echo 'Cleaning...' && rm -rf public",
     "deploy": "hexo deploy",
     "server": "hexo server",
     "dev": "hexo server --draft",
