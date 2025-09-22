@@ -99,6 +99,10 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: anzhiyu
 
+# Pug renderer configuration
+pug:
+  pretty: true
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
