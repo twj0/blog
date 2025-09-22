@@ -44,6 +44,10 @@ jobs:
         # 清理可能损坏的 node_modules
         rm -rf node_modules package-lock.json
 
+        # 临时移除导致EISDIR错误的scripts文件
+        echo "临时移除scripts目录以避免EISDIR错误"
+        mv scripts scripts_backup || true
+
         # 重新安装所有依赖
         npm install
         npm install hexo-renderer-pug --save
