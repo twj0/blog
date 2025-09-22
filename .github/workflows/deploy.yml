@@ -43,106 +43,20 @@ jobs:
       run: |
         npm ci
         
-    # 生成配置文件
-    - name: Generate Configuration Files
+    # 验证配置文件
+    - name: Verify Configuration Files
       run: |
-        # 创建配置生成脚本
-        cat > generate-config.js << 'EOF'
-        const fs = require('fs');
-        const path = require('path');
-        
-        // 环境变量配置
-        const config = {
-          SITE_TITLE: process.env.SITE_TITLE || 'My Blog',
-          SITE_SUBTITLE: process.env.SITE_SUBTITLE || '',
-          SITE_DESCRIPTION: process.env.SITE_DESCRIPTION || 'A blog powered by Hexo and AnZhiYu theme',
-          SITE_KEYWORDS: process.env.SITE_KEYWORDS || 'blog,hexo,anzhiyu',
-          AUTHOR_NAME: process.env.AUTHOR_NAME || 'Blog Author',
-          SITE_LANGUAGE: process.env.SITE_LANGUAGE || 'zh-CN',
-          TIMEZONE: process.env.TIMEZONE || 'Asia/Shanghai',
-          SITE_URL: process.env.SITE_URL || `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${process.env.GITHUB_REPOSITORY_NAME}`,
-          SITE_ROOT: process.env.SITE_ROOT || `/${process.env.GITHUB_REPOSITORY_NAME}/`,
-          DEPLOY_REPO: process.env.DEPLOY_REPO || `https://github.com/${process.env.GITHUB_REPOSITORY}.git`,
-          DEPLOY_BRANCH: process.env.DEPLOY_BRANCH || 'gh-pages',
-          GITHUB_USERNAME: process.env.GITHUB_REPOSITORY_OWNER,
-          GITHUB_REPOSITORY: process.env.GITHUB_REPOSITORY_NAME,
-          
-          // 主题相关配置
-          GITHUB_URL: process.env.GITHUB_URL || `https://github.com/${process.env.GITHUB_REPOSITORY_OWNER}`,
-          AVATAR_URL: process.env.AVATAR_URL || 'https://avatars.githubusercontent.com/u/1?v=4',
-          FAVICON_URL: process.env.FAVICON_URL || '/favicon.ico',
-          INDEX_IMG_URL: process.env.INDEX_IMG_URL || 'false',
-          DEFAULT_TOP_IMG_URL: process.env.DEFAULT_TOP_IMG_URL || 'false',
-          THEME_COLOR_MAIN: process.env.THEME_COLOR_MAIN || '#425AEF',
-          THEME_COLOR_DARK: process.env.THEME_COLOR_DARK || '#f2b94b',
-          
-          // 评论系统配置
-          COMMENT_SYSTEM: process.env.COMMENT_SYSTEM || 'none',
-          VALINE_APP_ID: process.env.VALINE_APP_ID || '',
-          VALINE_APP_KEY: process.env.VALINE_APP_KEY || '',
-          WALINE_SERVER_URL: process.env.WALINE_SERVER_URL || '',
-          GISCUS_REPO: process.env.GISCUS_REPO || '',
-          GISCUS_REPO_ID: process.env.GISCUS_REPO_ID || '',
-          GISCUS_CATEGORY_ID: process.env.GISCUS_CATEGORY_ID || '',
-          
-          // 其他配置
-          AUTHOR_LOCATION: process.env.AUTHOR_LOCATION || '',
-          SITE_SINCE_YEAR: process.env.SITE_SINCE_YEAR || new Date().getFullYear(),
-          PWA_ENABLE: process.env.PWA_ENABLE || 'false'
-        };
-        
-        // 读取模板文件并替换变量
-        function processTemplate(templatePath, outputPath) {
-          if (!fs.existsSync(templatePath)) {
-            console.log(`Template file ${templatePath} not found, skipping...`);
-            return;
-          }
-          
-          let content = fs.readFileSync(templatePath, 'utf8');
-          
-          // 替换所有占位符
-          Object.keys(config).forEach(key => {
-            const placeholder = new RegExp(`{{${key}}}`, 'g');
-            content = content.replace(placeholder, config[key]);
-          });
-          
-          fs.writeFileSync(outputPath, content);
-          console.log(`Generated ${outputPath} from ${templatePath}`);
-        }
-        
-        // 生成配置文件
-        processTemplate('_config.template.yml', '_config.yml');
-        processTemplate('themes/anzhiyu/_config.template.yml', 'themes/anzhiyu/_config.yml');
-        
-        console.log('Configuration files generated successfully!');
-        EOF
-        
-        # 运行配置生成脚本
-        node generate-config.js
-      env:
-        SITE_TITLE: ${{ vars.SITE_TITLE }}
-        SITE_SUBTITLE: ${{ vars.SITE_SUBTITLE }}
-        SITE_DESCRIPTION: ${{ vars.SITE_DESCRIPTION }}
-        SITE_KEYWORDS: ${{ vars.SITE_KEYWORDS }}
-        AUTHOR_NAME: ${{ vars.AUTHOR_NAME }}
-        SITE_LANGUAGE: ${{ vars.SITE_LANGUAGE }}
-        TIMEZONE: ${{ vars.TIMEZONE }}
-        SITE_URL: ${{ vars.SITE_URL }}
-        SITE_ROOT: ${{ vars.SITE_ROOT }}
-        GITHUB_URL: ${{ vars.GITHUB_URL }}
-        AVATAR_URL: ${{ vars.AVATAR_URL }}
-        THEME_COLOR_MAIN: ${{ vars.THEME_COLOR_MAIN }}
-        THEME_COLOR_DARK: ${{ vars.THEME_COLOR_DARK }}
-        COMMENT_SYSTEM: ${{ vars.COMMENT_SYSTEM }}
-        VALINE_APP_ID: ${{ secrets.VALINE_APP_ID }}
-        VALINE_APP_KEY: ${{ secrets.VALINE_APP_KEY }}
-        WALINE_SERVER_URL: ${{ vars.WALINE_SERVER_URL }}
-        GISCUS_REPO: ${{ vars.GISCUS_REPO }}
-        GISCUS_REPO_ID: ${{ vars.GISCUS_REPO_ID }}
-        GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
-        GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-        GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
-        GITHUB_REPOSITORY: ${{ github.repository }}
+        echo "Using existing _config.yml file..."
+        echo "Current _config.yml URL settings:"
+        grep -E "^url:|^root:" _config.yml || echo "URL settings not found"
+
+        echo "Checking theme configuration..."
+        if [ -f "themes/anzhiyu/_config.yml" ]; then
+          echo "AnZhiYu theme config exists"
+        else
+          echo "Warning: AnZhiYu theme config not found"
+        fi
+
         
     # 清理和生成
     - name: Clean and Generate
