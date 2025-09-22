@@ -43,40 +43,130 @@ jobs:
       run: |
         npm ci
         
-    # 验证配置文件
-    - name: Verify Configuration Files
+    # 生成配置文件（如果设置了环境变量）
+    - name: Generate Configuration Files
       run: |
-        echo "Using existing _config.yml file..."
-        echo "Current _config.yml URL settings:"
-        grep -E "^url:|^root:" _config.yml || echo "URL settings not found"
+        if [ -n "${{ vars.SITE_TITLE }}" ]; then
+          echo "🔧 检测到环境变量，生成自定义配置..."
 
-        echo "Checking theme configuration..."
-        if [ -f "themes/anzhiyu/_config.yml" ]; then
-          echo "AnZhiYu theme config exists"
+          # 生成 _config.yml
+          cat > _config.yml << EOF
+        # Hexo Configuration
+        title: ${{ vars.SITE_TITLE || 'twj0的个人博客' }}
+        subtitle: ${{ vars.SITE_SUBTITLE || '记录生活，分享技术' }}
+        description: ${{ vars.SITE_DESCRIPTION || '基于Hexo和AnZhiYu主题的个人博客' }}
+        keywords: ${{ vars.SITE_KEYWORDS || 'blog,hexo,anzhiyu' }}
+        author: ${{ vars.AUTHOR_NAME || 'twj0' }}
+        language: ${{ vars.SITE_LANGUAGE || 'zh-CN' }}
+        timezone: ${{ vars.TIMEZONE || 'Asia/Shanghai' }}
+
+        # URL
+        url: ${{ vars.SITE_URL || 'https://twj0.github.io/blog' }}
+        root: ${{ vars.SITE_ROOT || '/blog/' }}
+        permalink: :year/:month/:day/:title/
+        permalink_defaults:
+        pretty_urls:
+          trailing_index: true
+          trailing_html: true
+
+        # Directory
+        source_dir: source
+        public_dir: public
+        tag_dir: tags
+        archive_dir: archives
+        category_dir: categories
+        code_dir: downloads/code
+        i18n_dir: :lang
+        skip_render:
+
+        # Writing
+        new_post_name: :title.md
+        default_layout: post
+        titlecase: false
+        external_link:
+          enable: true
+          field: site
+          exclude: ''
+        filename_case: 0
+        render_drafts: false
+        post_asset_folder: false
+        relative_link: false
+        future: true
+        syntax_highlighter: highlight.js
+        highlight:
+          line_number: true
+          auto_detect: false
+          tab_replace: ''
+          wrap: true
+          hljs: false
+        prismjs:
+          preprocess: true
+          line_number: true
+          tab_replace: ''
+
+        # Home page setting
+        index_generator:
+          path: ''
+          per_page: 10
+          order_by: -date
+
+        # Category & Tag
+        default_category: uncategorized
+        category_map:
+        tag_map:
+
+        # Metadata elements
+        meta_generator: true
+
+        # Date / Time format
+        date_format: YYYY-MM-DD
+        time_format: HH:mm:ss
+        updated_option: 'mtime'
+
+        # Pagination
+        per_page: 10
+        pagination_dir: page
+
+        # Include / Exclude file(s)
+        include:
+        exclude:
+        ignore:
+
+        # Extensions
+        theme: anzhiyu
+
+        # Deployment
+        deploy:
+          type: git
+          repo: https://github.com/twj0/blog.git
+          branch: gh-pages
+        EOF
+
+          echo "✅ 使用环境变量生成了自定义配置"
         else
-          echo "Warning: AnZhiYu theme config not found"
+          echo "📋 使用现有的 _config.yml 文件"
         fi
 
-        echo "Node.js version:"
-        node --version
-        echo "NPM version:"
-        npm --version
+        echo "当前配置文件内容："
+        grep -E "^title:|^url:|^root:" _config.yml
 
     # 清理和生成
     - name: Clean and Generate
       run: |
+        echo "🧹 清理旧文件..."
         npx hexo clean
+
+        echo "🏗️ 生成静态文件..."
         npx hexo generate
 
-        echo "Generated files:"
-        ls -la public/
+        echo "📁 检查生成的文件："
+        ls -la public/ | head -10
 
-        echo "Checking index.html:"
         if [ -f "public/index.html" ]; then
-          echo "✅ index.html exists"
-          head -5 public/index.html
+          echo "✅ index.html 生成成功"
+          echo "📄 文件大小: $(wc -c < public/index.html) bytes"
         else
-          echo "❌ index.html not found"
+          echo "❌ index.html 生成失败"
           exit 1
         fi
         

@@ -1,6 +1,6 @@
 # 🚀 个人博客模板
 
-[![Deploy Status](https://github.com/yourusername/your-blog-repo/workflows/Deploy%20Blog%20to%20GitHub%20Pages/badge.svg)](https://github.com/yourusername/your-blog-repo/actions)
+[![Deploy Status](https://github.com/twj0/blog/workflows/Deploy%20Blog%20to%20GitHub%20Pages/badge.svg)](https://github.com/twj0/blog/actions)
 [![Hexo Version](https://img.shields.io/badge/Hexo-7.3.0-blue)](https://hexo.io/)
 [![Theme](https://img.shields.io/badge/Theme-AnZhiYu-orange)](https://github.com/anzhiyu-c/hexo-theme-anzhiyu)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -30,8 +30,8 @@
 2. **配置个人信息**
    ```bash
    # 克隆到本地
-   git clone https://github.com/yourusername/your-blog-repo.git
-   cd your-blog-repo
+   git clone https://github.com/twj0/blog.git
+   cd blog
    
    # 安装依赖
    npm install
@@ -54,7 +54,7 @@
 
 5. **访问您的博客**
    ```
-   https://yourusername.github.io/your-blog-repo
+   https://yourusername.github.io/blog
    ```
 
 ### 方法二：手动配置
@@ -64,8 +64,8 @@
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/yourusername/your-blog-repo.git
-   cd your-blog-repo
+   git clone https://github.com/twj0/blog.git
+   cd blog
    npm install
    ```
 
