@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Personal configuration files (generated from templates)
+_config.personal.yml
+themes/anzhiyu/_config.personal.yml
+
+# Backup files
+*.backup
+*.bak
