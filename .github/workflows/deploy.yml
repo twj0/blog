@@ -57,6 +57,11 @@ jobs:
         # 重新安装所有依赖
         npm install
         npm install hexo-renderer-pug --save
+        npm install hexo-renderer-stylus --save
+
+        # 安装主题依赖
+        echo "安装主题依赖..."
+        cd themes/anzhiyu && npm install && cd ../..
 
         # 验证关键插件安装
         echo "验证插件安装："
