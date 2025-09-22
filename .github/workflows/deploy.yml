@@ -48,6 +48,12 @@ jobs:
         echo "临时移除scripts目录以避免EISDIR错误"
         mv scripts scripts_backup || true
 
+        # 确保配置文件存在
+        if [ ! -f "_config.yml" ]; then
+          echo "⚠️ _config.yml 不存在，从模板复制"
+          cp _config.template.yml _config.yml || echo "模板文件不存在，将使用环境变量生成"
+        fi
+
         # 重新安装所有依赖
         npm install
         npm install hexo-renderer-pug --save
@@ -60,7 +66,10 @@ jobs:
     # 生成配置文件（如果设置了环境变量）
     - name: Generate Configuration Files
       run: |
-        if [ -n "${{ vars.SITE_TITLE }}" ]; then
+        echo "🔧 检查配置文件状态..."
+        if [ -f "_config.yml" ]; then
+          echo "✅ 使用现有的 _config.yml 文件"
+        elif [ -n "${{ vars.SITE_TITLE }}" ]; then
           echo "🔧 检测到环境变量，生成自定义配置..."
 
           # 生成 _config.yml
