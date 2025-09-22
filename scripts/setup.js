@@ -95,7 +95,7 @@ async function runSetup() {
     userConfig.SITE_URL = `https://${userConfig.GITHUB_USERNAME}.github.io/${userConfig.GITHUB_REPOSITORY}`;
     userConfig.SITE_ROOT = `/${userConfig.GITHUB_REPOSITORY}/`;
     userConfig.DEPLOY_REPO = `https://github.com/${userConfig.GITHUB_USERNAME}/${userConfig.GITHUB_REPOSITORY}.git`;
-    userConfig.GITHUB_URL = `https://github.com/${userConfig.GITHUB_USERNAME}`;
+    userConfig.USER_GITHUB_URL = `https://github.com/${userConfig.GITHUB_USERNAME}`;
     userConfig.AVATAR_URL = `https://avatars.githubusercontent.com/${userConfig.GITHUB_USERNAME}`;
 
     console.log('\n📋 配置预览:');

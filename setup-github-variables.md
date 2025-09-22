@@ -25,7 +25,7 @@
 | `TIMEZONE` | `Asia/Shanghai` | 时区设置 |
 | `SITE_URL` | `https://twj0.github.io/blog` | 网站完整URL |
 | `SITE_ROOT` | `/blog/` | 网站根路径 |
-| `GITHUB_URL` | `https://github.com/twj0` | GitHub主页 |
+| `USER_GITHUB_URL` | `https://github.com/twj0` | GitHub主页 |
 | `AVATAR_URL` | `https://avatars.githubusercontent.com/u/你的用户ID?v=4` | 头像地址 |
 | `THEME_COLOR_MAIN` | `#425AEF` | 主题主色调 |
 | `THEME_COLOR_DARK` | `#f2b94b` | 深色模式颜色 |
