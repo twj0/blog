@@ -41,7 +41,8 @@ jobs:
     # 安装依赖
     - name: Install Dependencies
       run: |
-        npm ci
+        # 使用 npm install 而不是 npm ci 来处理依赖不同步问题
+        npm install
         npm install hexo-renderer-pug --save
         
     # 生成配置文件（如果设置了环境变量）
