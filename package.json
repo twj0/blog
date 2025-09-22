@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo generate && node scripts/html-formatter.js",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
     "setup": "node scripts/setup.js",
     "dev": "hexo clean && hexo server",
-    "preview": "hexo clean && hexo generate && hexo server",
-    "check": "node scripts/check-config.js"
+    "preview": "hexo clean && hexo generate && node scripts/html-formatter.js && hexo server",
+    "check": "node scripts/check-config.js",
+    "format-html": "node scripts/html-formatter.js"
   },
   "hexo": {
     "version": "7.3.0"
