@@ -104,6 +104,8 @@ pug:
   pretty: true
 
 # Deployment
+## Note: This project uses GitHub Actions for deployment
+## The deploy config below is for manual deployment only (not used in current setup)
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git

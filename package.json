@@ -11,7 +11,9 @@
     "dev": "hexo clean && hexo server",
     "preview": "hexo clean && hexo generate && node scripts/html-formatter.js && hexo server",
     "check": "node scripts/check-config.js",
-    "format-html": "node scripts/html-formatter.js"
+    "format-html": "node scripts/html-formatter.js",
+    "update-theme": "node scripts/update-theme.js",
+    "check-theme-update": "node scripts/update-theme.js --check"
   },
   "hexo": {
     "version": "7.3.0"

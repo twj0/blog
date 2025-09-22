@@ -1,0 +1,265 @@
+# AnZhiYu主题个性化配置示例
+# 复制此文件为 _config.yml 并根据需要修改
+
+# 菜单配置
+menu:
+  文章:
+    隧道: /archives/ || anzhiyu-icon-box-archive
+    分类: /categories/ || anzhiyu-icon-shapes
+    标签: /tags/ || anzhiyu-icon-tags
+  
+  友链:
+    友人帐: /link/ || anzhiyu-icon-link
+    朋友圈: /fcircle/ || anzhiyu-icon-artstation
+    留言板: /comments/ || anzhiyu-icon-envelope
+  
+  关于:
+    关于本人: /about/ || anzhiyu-icon-paper-plane
+    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+    随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
+
+# 社交链接
+social:
+  Github: https://github.com/yourusername || anzhiyu-icon-github
+  Email: mailto:your@email.com || anzhiyu-icon-envelope
+  # 更多社交链接...
+
+# 作者卡片状态
+author_status:
+  enable: true
+  statusImg: "https://example.com/status.png"
+  skills:
+    - 🤖️ 数码科技爱好者
+    - 🔍 分享与热心帮助
+    - 🏠 智能家居小能手
+    - 🔨 设计开发一条龙
+
+# 主题颜色配置
+theme_color:
+  enable: true
+  main: "#425AEF"
+  dark_main: "#f2b94b"
+  paginator: "#425AEF"
+  text_selection: "#2128bd"
+  link_color: "var(--anzhiyu-fontcolor)"
+  meta_color: "var(--anzhiyu-fontcolor)"
+  hr_color: "#4259ef23"
+  code_foreground: "#fff"
+  code_background: "var(--anzhiyu-code-stress)"
+  toc_color: "#425AEF"
+  scrollbar_color: "var(--anzhiyu-scrollbar)"
+  meta_theme_color_light: "#f7f9fe"
+  meta_theme_color_dark: "#18171d"
+
+# 首页顶部配置
+home_top:
+  enable: true
+  timemode: date
+  title: 生活明朗
+  subTitle: 万物可爱。
+  siteText: yourdomain.com
+  category:
+    - name: 前端
+      path: /categories/前端开发/
+      shadow: var(--anzhiyu-shadow-blue)
+      class: blue
+      icon: anzhiyu-icon-dove
+    - name: 生活
+      path: /categories/生活日常/
+      shadow: var(--anzhiyu-shadow-green)
+      class: green
+      icon: anzhiyu-icon-book
+
+# 评论系统配置 (选择一个)
+comments:
+  use: # valine/waline/twikoo/giscus
+  text: true
+  lazyload: false
+  count: false
+  card_post_count: false
+
+# Valine评论配置
+valine:
+  appId: # LeanCloud App ID
+  appKey: # LeanCloud App Key
+  pageSize: 10
+  avatar: mp
+  lang: zh-CN
+  placeholder: 填写QQ邮箱就会使用QQ头像喔~
+  guest_info: nick,mail,link
+  recordIP: false
+  bg: /img/comment_bg.png
+  emojiCDN: //i0.hdslb.com/bfs/emote/
+  enableQQ: true
+  requiredFields: nick,mail
+  visitor: false
+
+# Waline评论配置
+waline:
+  serverURL: # Waline服务器地址
+  bg: # 背景图片
+  pageview: false
+  meta_css: false
+  imageUploader: true
+
+# Giscus评论配置
+giscus:
+  repo: # GitHub仓库名
+  repo_id: # GitHub仓库ID
+  category_id: # GitHub分类ID
+  theme:
+    light: light
+    dark: dark
+  option:
+    data-lang: zh-CN
+
+# 搜索配置
+local_search:
+  enable: true
+  preload: false
+
+# 音乐播放器配置
+nav_music:
+  enable: true
+  console_widescreen_music: false
+  id: 8152976493  # 网易云音乐歌单ID
+  server: netease # netease/tencent/kugou
+  volume: 0.7
+
+# 代码高亮配置
+highlight_theme: light # darker/pale night/light/ocean/mac/mac light/false
+highlight_copy: true
+highlight_lang: true
+highlight_shrink: false
+highlight_height_limit: 330
+code_word_wrap: false
+
+# 复制设置
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 50
+
+# 文章相关配置
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  location: 您的位置
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 打赏配置
+reward:
+  enable: true
+  QR_code:
+    - img: /img/wechat-qr.png
+      link:
+      text: 微信
+    - img: /img/alipay-qr.png
+      link:
+      text: 支付宝
+
+# 侧边栏配置
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  card_author:
+    enable: true
+    description: # 作者描述
+    name_link: /
+  card_announcement:
+    enable: false
+    content: 欢迎来看我的博客鸭~
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: false
+
+# 页脚配置
+footer_bg: false
+
+# 背景特效
+canvas_ribbon:
+  enable: false
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
+  mobile: false
+
+canvas_fluttering_ribbon:
+  enable: false
+  mobile: false
+
+fireworks:
+  enable: false
+  zIndex: 9999
+  mobile: false
+
+click_heart:
+  enable: false
+  mobile: false
+
+# 深色模式
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: 1
+
+# 图片懒加载
+lazyload:
+  enable: true
+  field: site
+  placeholder:
+  blur: true
+  progressive: true
+
+# PWA配置
+pwa:
+  enable: false
+  startup_image_enable: true
+  manifest: /manifest.json
+  theme_color: var(--anzhiyu-main)
+  mask_icon: /img/siteicon/apple-icon-180.png
+  apple_touch_icon: /img/siteicon/apple-icon-180.png
+  bookmark_icon: /img/siteicon/apple-icon-180.png
+  favicon_32_32: /img/siteicon/32.png
+  favicon_16_16: /img/siteicon/16.png
+
+# 自定义注入
+inject:
+  head:
+    # 自定义CSS
+    # - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    # 自定义JS
+    # - <script src="/js/custom.js"></script>
+
+# CDN配置
+CDN:
+  internal_provider: local
+  third_party_provider: cbd
+  version: true
