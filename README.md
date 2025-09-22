@@ -203,295 +203,295 @@ npm install hexo-plugin-name --save
 - Add custom styles in `themes/anzhiyu/source/css/`
 - Detailed instructions: [Theme Customization Guide](docs/theme-customization.md)
 
-## 🔧 详细配置说明
+## 🔧 Detailed Configuration Guide
 
-### 📁 核心配置文件详解
+### 📁 Core Configuration Files
 
-#### 1. `.env.example` - 环境变量模板
-这个文件包含了所有可配置的环境变量示例：
+#### 1. `.env.example` - Environment Variables Template
+This file contains examples of all configurable environment variables:
 
 ```bash
-# 网站基本信息
-SITE_TITLE=我的个人博客                    # 网站标题
-SITE_SUBTITLE=记录生活，分享技术            # 网站副标题
-SITE_DESCRIPTION=这是我的个人博客           # 网站描述
-AUTHOR_NAME=您的姓名                       # 作者姓名
+# Website Basic Information
+SITE_TITLE=My Personal Blog                    # Website title
+SITE_SUBTITLE=Recording life, sharing technology # Website subtitle
+SITE_DESCRIPTION=This is my personal blog       # Website description
+AUTHOR_NAME=Your Name                           # Author name
 
-# GitHub 相关配置
-GITHUB_USERNAME=yourusername               # GitHub 用户名
-GITHUB_REPOSITORY=blog                     # 仓库名称
-GITHUB_URL=https://github.com/yourusername # GitHub 主页
+# GitHub Related Configuration
+GITHUB_USERNAME=yourusername                    # GitHub username
+GITHUB_REPOSITORY=blog                          # Repository name
+GITHUB_URL=https://github.com/yourusername      # GitHub homepage
 
-# 网站 URL 配置
-SITE_URL=https://yourusername.github.io/blog  # 网站地址
-ROOT_PATH=/blog/                              # 根路径
+# Website URL Configuration
+SITE_URL=https://yourusername.github.io/blog   # Website address
+ROOT_PATH=/blog/                                # Root path
 
-# 主题外观配置
-AVATAR_URL=https://example.com/avatar.jpg     # 头像地址
-THEME_COLOR_MAIN=#49b1f5                     # 主题主色调
-THEME_COLOR_PAGINATOR=#00c4b6                # 分页器颜色
+# Theme Appearance Configuration
+AVATAR_URL=https://example.com/avatar.jpg       # Avatar address
+THEME_COLOR_MAIN=#49b1f5                       # Theme main color
+THEME_COLOR_PAGINATOR=#00c4b6                  # Paginator color
 
-# 评论系统配置 (可选)
-COMMENT_SYSTEM=valine                         # 评论系统类型
-VALINE_APP_ID=your_app_id                    # Valine App ID
-VALINE_APP_KEY=your_app_key                  # Valine App Key
+# Comment System Configuration (Optional)
+COMMENT_SYSTEM=valine                           # Comment system type
+VALINE_APP_ID=your_app_id                      # Valine App ID
+VALINE_APP_KEY=your_app_key                    # Valine App Key
 ```
 
-**使用方法**：
-1. 复制 `.env.example` 为 `.env`
-2. 修改其中的值为您的实际信息
-3. 运行 `npm run setup` 自动生成配置文件
+**Usage Instructions**:
+1. Copy `.env.example` to `.env`
+2. Modify the values to your actual information
+3. Run `npm run setup` to automatically generate configuration files
 
-#### 2. `_config.template.yml` - Hexo 主配置模板
-这是 Hexo 的主要配置文件模板，包含：
+#### 2. `_config.template.yml` - Hexo Main Configuration Template
+This is the main configuration file template for Hexo, containing:
 
 ```yaml
-# 网站信息
-title: {{SITE_TITLE}}                    # 使用环境变量
+# Website Information
+title: {{SITE_TITLE}}                    # Using environment variables
 subtitle: {{SITE_SUBTITLE}}
 description: {{SITE_DESCRIPTION}}
 author: {{AUTHOR_NAME}}
 
-# URL 配置
+# URL Configuration
 url: {{SITE_URL}}
 root: {{ROOT_PATH}}
 
-# 部署配置
+# Deployment Configuration
 deploy:
   type: git
   repo: {{DEPLOY_REPO}}
   branch: gh-pages
 ```
 
-**占位符说明**：
-- `{{VARIABLE_NAME}}` 格式的占位符会被环境变量替换
-- GitHub Actions 会自动处理这些替换
+**Placeholder Explanation**:
+- Placeholders in `{{VARIABLE_NAME}}` format will be replaced by environment variables
+- GitHub Actions will automatically handle these replacements
 
-#### 3. `themes/anzhiyu/_config.template.yml` - 主题配置模板
-AnZhiYu 主题的配置文件，控制：
+#### 3. `themes/anzhiyu/_config.template.yml` - Theme Configuration Template
+AnZhiYu theme configuration file, controlling:
 
 ```yaml
-# 网站图标和头像
+# Website Icon and Avatar
 avatar:
   img: {{AVATAR_URL}}
 
-# 主题颜色
+# Theme Colors
 theme_color:
   enable: true
   main: "{{THEME_COLOR_MAIN}}"
   paginator: "{{THEME_COLOR_PAGINATOR}}"
 
-# 社交链接
+# Social Links
 social:
   Github: {{GITHUB_URL}} || fab fa-github
 ```
 
-### 🔄 GitHub Actions 工作流详解
+### 🔄 GitHub Actions Workflow Details
 
-#### `.github/workflows/deploy.yml` 文件作用：
+#### `.github/workflows/deploy.yml` File Functions:
 
-1. **触发条件**：当推送到 `main` 分支时自动运行
-2. **环境设置**：安装 Node.js 18 和项目依赖
-3. **配置生成**：从环境变量生成实际配置文件
-4. **构建部署**：生成静态文件并部署到 GitHub Pages
+1. **Trigger Conditions**: Automatically runs when pushing to `main` branch
+2. **Environment Setup**: Install Node.js 18 and project dependencies
+3. **Configuration Generation**: Generate actual configuration files from environment variables
+4. **Build and Deploy**: Generate static files and deploy to GitHub Pages
 
-**工作流程**：
+**Workflow Process**:
 ```yaml
 name: Deploy Blog
 
 on:
   push:
-    branches: [ main ]  # 推送到 main 分支时触发
+    branches: [ main ]  # Triggers when pushing to main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout          # 检出代码
-      - name: Setup Node.js     # 设置 Node.js 环境
-      - name: Install deps      # 安装依赖
-      - name: Generate config   # 生成配置文件
-      - name: Build & Deploy    # 构建并部署
+      - name: Checkout          # Checkout code
+      - name: Setup Node.js     # Setup Node.js environment
+      - name: Install deps      # Install dependencies
+      - name: Generate config   # Generate configuration files
+      - name: Build & Deploy    # Build and deploy
 ```
 
-## 🌟 Git 操作详细指南
+## 🌟 Detailed Git Operations Guide
 
-### 📥 基础 Git 操作
+### 📥 Basic Git Operations
 
-#### 1. 克隆仓库到本地
+#### 1. Clone Repository to Local
 ```bash
-# 克隆您 Fork 的仓库
+# Clone your forked repository
 git clone https://github.com/yourusername/blog.git
 cd blog
 
-# 安装依赖
+# Install dependencies
 npm install
 ```
 
-#### 2. 基本 Git 命令
+#### 2. Basic Git Commands
 ```bash
-# 查看当前状态
+# Check current status
 git status
 
-# 添加文件到暂存区
-git add .                    # 添加所有文件
-git add filename.md          # 添加特定文件
+# Add files to staging area
+git add .                    # Add all files
+git add filename.md          # Add specific file
 
-# 提交更改
-git commit -m "feat: 添加新文章"
+# Commit changes
+git commit -m "feat: add new article"
 
-# 推送到远程仓库
+# Push to remote repository
 git push origin main
 ```
 
-#### 3. 查看和管理历史
+#### 3. View and Manage History
 ```bash
-# 查看提交历史
+# View commit history
 git log --oneline
 
-# 查看文件更改
+# View file changes
 git diff
 
-# 撤销未提交的更改
+# Undo uncommitted changes
 git checkout -- filename.md
 ```
 
-### 🌿 分支操作详解
+### 🌿 Branch Operations Details
 
-#### 1. 创建和切换分支
+#### 1. Create and Switch Branches
 ```bash
-# 创建新分支
+# Create new branch
 git branch feature/new-post
 
-# 切换到新分支
+# Switch to new branch
 git checkout feature/new-post
 
-# 创建并切换到新分支（一步完成）
+# Create and switch to new branch (one step)
 git checkout -b feature/new-post
 ```
 
-#### 2. 分支管理
+#### 2. Branch Management
 ```bash
-# 查看所有分支
+# View all branches
 git branch -a
 
-# 查看当前分支
+# View current branch
 git branch
 
-# 删除本地分支
+# Delete local branch
 git branch -d feature/old-branch
 
-# 删除远程分支
+# Delete remote branch
 git push origin --delete feature/old-branch
 ```
 
-#### 3. 合并分支
+#### 3. Merge Branches
 ```bash
-# 切换到主分支
+# Switch to main branch
 git checkout main
 
-# 合并功能分支
+# Merge feature branch
 git merge feature/new-post
 
-# 推送合并结果
+# Push merge results
 git push origin main
 ```
 
-### 🔄 Pull Request (PR) 操作流程
+### 🔄 Pull Request (PR) Operation Process
 
-#### 1. 准备 PR
+#### 1. Prepare PR
 ```bash
-# 1. 确保在功能分支上
+# 1. Ensure you're on the feature branch
 git checkout feature/new-article
 
-# 2. 添加您的更改
-echo "# 我的新文章" > source/_posts/my-new-article.md
+# 2. Add your changes
+echo "# My New Article" > source/_posts/my-new-article.md
 
-# 3. 提交更改
+# 3. Commit changes
 git add .
-git commit -m "feat: 添加新文章 - 我的新文章"
+git commit -m "feat: add new article - My New Article"
 
-# 4. 推送分支到远程
+# 4. Push branch to remote
 git push origin feature/new-article
 ```
 
-#### 2. 在 GitHub 上创建 PR
-1. **访问您的仓库页面**
-2. **点击 "Compare & pull request" 按钮**
-3. **填写 PR 信息**：
+#### 2. Create PR on GitHub
+1. **Visit your repository page**
+2. **Click "Compare & pull request" button**
+3. **Fill in PR information**:
    ```markdown
-   ## 📝 更改描述
-   添加了一篇关于技术分享的新文章
+   ## 📝 Change Description
+   Added a new article about technology sharing
 
-   ## 📋 更改类型
-   - [x] 新文章
-   - [ ] Bug 修复
-   - [ ] 功能改进
+   ## 📋 Change Type
+   - [x] New article
+   - [ ] Bug fix
+   - [ ] Feature improvement
 
-   ## ✅ 检查清单
-   - [x] 文章格式正确
-   - [x] 图片链接有效
-   - [x] 本地预览正常
+   ## ✅ Checklist
+   - [x] Article format is correct
+   - [x] Image links are valid
+   - [x] Local preview works properly
    ```
 
-#### 3. PR 审查和合并
+#### 3. PR Review and Merge
 ```bash
-# 如果需要修改 PR
+# If PR needs modifications
 git checkout feature/new-article
-# 进行修改...
+# Make modifications...
 git add .
-git commit -m "fix: 修正文章格式"
-git push origin feature/new-article  # 自动更新 PR
+git commit -m "fix: correct article format"
+git push origin feature/new-article  # Automatically updates PR
 
-# PR 合并后，清理本地分支
+# After PR is merged, clean up local branch
 git checkout main
 git pull origin main
 git branch -d feature/new-article
 ```
 
-### 🔄 博客更新工作流
+### 🔄 Blog Update Workflow
 
-#### 方法一：直接在 main 分支更新（简单）
+#### Method 1: Direct Update on main Branch (Simple)
 ```bash
-# 1. 拉取最新代码
+# 1. Pull latest code
 git pull origin main
 
-# 2. 添加新文章
-hexo new post "我的新文章"
+# 2. Add new article
+hexo new post "My New Article"
 
-# 3. 编辑文章
-# 编辑 source/_posts/我的新文章.md
+# 3. Edit article
+# Edit source/_posts/My-New-Article.md
 
-# 4. 本地预览
+# 4. Local preview
 npm run server
 
-# 5. 提交并推送
+# 5. Commit and push
 git add .
-git commit -m "feat: 添加新文章 - 我的新文章"
+git commit -m "feat: add new article - My New Article"
 git push origin main
 ```
 
-#### 方法二：使用分支工作流（推荐）
+#### Method 2: Using Branch Workflow (Recommended)
 ```bash
-# 1. 创建新分支
+# 1. Create new branch
 git checkout -b post/new-article
 
-# 2. 添加内容
-hexo new post "技术分享"
+# 2. Add content
+hexo new post "Technology Sharing"
 
-# 3. 编辑和预览
-# 编辑文章...
+# 3. Edit and preview
+# Edit article...
 npm run server
 
-# 4. 提交到分支
+# 4. Commit to branch
 git add .
-git commit -m "feat: 添加技术分享文章"
+git commit -m "feat: add technology sharing article"
 git push origin post/new-article
 
-# 5. 创建 PR 并合并
-# 在 GitHub 上创建 PR，审查后合并
+# 5. Create PR and merge
+# Create PR on GitHub, review and merge
 
-# 6. 清理分支
+# 6. Clean up branch
 git checkout main
 git pull origin main
 git branch -d post/new-article
