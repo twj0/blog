@@ -61,7 +61,18 @@ jobs:
 
         # 安装主题依赖
         echo "安装主题依赖..."
-        cd themes/anzhiyu && npm install && cd ../..
+        if [ -d "themes/anzhiyu" ]; then
+          cd themes/anzhiyu
+          if [ -f "package.json" ]; then
+            npm install
+            echo "主题依赖安装完成"
+          else
+            echo "主题package.json不存在"
+          fi
+          cd ../..
+        else
+          echo "主题目录不存在"
+        fi
 
         # 验证关键插件安装
         echo "验证插件安装："
@@ -193,7 +204,23 @@ jobs:
         npx hexo clean
 
         echo "🏗️ 生成静态文件..."
+        echo "检查主题状态..."
+        ls -la themes/
+        ls -la themes/anzhiyu/
+
+        echo "检查配置文件..."
+        cat _config.yml | grep -E "theme|pug"
+
+        echo "开始生成..."
         npx hexo generate
+
+        echo "检查生成结果..."
+        ls -la public/
+        if [ -f "public/index.html" ]; then
+          echo "index.html大小: $(wc -c < public/index.html) bytes"
+          echo "index.html前10行:"
+          head -10 public/index.html
+        fi
 
         echo "🔧 强力修复DOCTYPE..."
         node scripts/doctype-fixer.js
