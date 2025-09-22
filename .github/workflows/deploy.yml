@@ -158,6 +158,10 @@ jobs:
         # Extensions
         theme: anzhiyu
 
+        # Pug renderer configuration
+        pug:
+          pretty: true
+
         # Deployment
         deploy:
           type: git
@@ -181,6 +185,9 @@ jobs:
 
         echo "🏗️ 生成静态文件..."
         npx hexo generate
+
+        echo "🔧 格式化HTML文件..."
+        node scripts/html-formatter.js
 
         echo "📁 检查生成的文件："
         ls -la public/ | head -10
