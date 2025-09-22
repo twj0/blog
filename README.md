@@ -1,198 +1,207 @@
-# 🚀 个人博客模板
+# 🚀 Personal Blog Template
 
 [![Deploy Status](https://github.com/twj0/blog/workflows/Deploy%20Blog%20to%20GitHub%20Pages/badge.svg)](https://github.com/twj0/blog/actions)
 [![Hexo Version](https://img.shields.io/badge/Hexo-7.3.0-blue)](https://hexo.io/)
 [![Theme](https://img.shields.io/badge/Theme-AnZhiYu-orange)](https://github.com/anzhiyu-c/hexo-theme-anzhiyu)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-基于 **Hexo** + **AnZhiYu** 主题的个人博客模板，支持 **GitHub Actions** 自动部署，让您快速搭建属于自己的个人博客！
+A personal blog template based on **Hexo** + **AnZhiYu** theme with **GitHub Actions** auto-deployment, enabling you to quickly build your own personal blog!
 
-## ✨ 特性
+## 🌐 Multi-Language Documentation
 
-- 🎨 **现代化设计** - 基于AnZhiYu主题，界面美观大方
-- 🚀 **自动部署** - GitHub Actions自动构建和部署
-- 📱 **响应式布局** - 完美适配桌面端和移动端
-- 💬 **多评论系统** - 支持Valine、Waline、Giscus等
-- 🔍 **搜索功能** - 内置本地搜索，快速查找内容
-- 📊 **数据统计** - 支持多种网站分析工具
-- 🌙 **深色模式** - 自动切换深色/浅色主题
-- ⚡ **性能优化** - 图片懒加载、代码高亮等优化
+- [English](README.md) (Current)
+- [简体中文](README-zhCN.md)
+- [繁體中文](README-zhTW.md)
+- [日本語](README-JP.md)
+- [한국어](README-ko.md)
 
-## 🎯 快速开始
+## ✨ Features
 
-### 方法一：一键部署（推荐）
+- 🎨 **Modern Design** - Based on AnZhiYu theme with beautiful and elegant interface
+- 🚀 **Auto Deployment** - Automated build and deployment with GitHub Actions
+- 📱 **Responsive Layout** - Perfect adaptation for desktop and mobile devices
+- 💬 **Multiple Comment Systems** - Support for Valine, Waline, Giscus, and more
+- 🔍 **Search Functionality** - Built-in local search for quick content discovery
+- 📊 **Analytics Integration** - Support for various website analytics tools
+- 🌙 **Dark Mode** - Automatic dark/light theme switching
+- ⚡ **Performance Optimized** - Image lazy loading, code highlighting, and more
 
-1. **Fork 此仓库**
+## 🎯 Quick Start
+
+### Method 1: One-Click Deployment (Recommended)
+
+1. **Fork this Repository**
    ```bash
-   点击右上角的 "Fork" 按钮
+   Click the "Fork" button in the top right corner
    ```
 
-2. **配置个人信息**
+2. **Configure Personal Information**
    ```bash
-   # 克隆到本地
-   git clone https://github.com/twj0/blog.git
+   # Clone to local
+   git clone https://github.com/yourusername/blog.git
    cd blog
-   
-   # 安装依赖
+
+   # Install dependencies
    npm install
-   
-   # 运行配置向导
+
+   # Run setup wizard
    npm run setup
    ```
 
-3. **启用 GitHub Pages**
-   - 进入仓库 Settings > Pages
-   - Source 选择 "GitHub Actions"
-   - 保存设置
+3. **Enable GitHub Pages**
+   - Go to repository Settings > Pages
+   - Select "GitHub Actions" as Source
+   - Save settings
 
-4. **推送代码，自动部署**
+4. **Push Code for Auto Deployment**
    ```bash
    git add .
    git commit -m "Initial blog setup"
    git push origin main
    ```
 
-5. **访问您的博客**
+5. **Access Your Blog**
    ```
    https://yourusername.github.io/blog
    ```
 
-### 方法二：手动配置
+### Method 2: Manual Configuration
 
 <details>
-<summary>点击展开手动配置步骤</summary>
+<summary>Click to expand manual configuration steps</summary>
 
-1. **克隆仓库**
+1. **Clone Repository**
    ```bash
-   git clone https://github.com/twj0/blog.git
+   git clone https://github.com/yourusername/blog.git
    cd blog
    npm install
    ```
 
-2. **配置基本信息**
-   
-   复制配置模板：
+2. **Configure Basic Information**
+
+   Copy configuration templates:
    ```bash
    cp _config.template.yml _config.yml
    cp themes/anzhiyu/_config.template.yml themes/anzhiyu/_config.yml
    ```
-   
-   编辑 `_config.yml` 文件，修改以下配置：
+
+   Edit `_config.yml` file and modify the following configurations:
    ```yaml
-   title: 您的博客标题
-   author: 您的姓名
+   title: Your Blog Title
+   author: Your Name
    url: https://yourusername.github.io/your-blog-repo
    ```
 
-3. **配置主题**
-   
-   编辑 `themes/anzhiyu/_config.yml`，自定义：
-   - 头像和社交链接
-   - 菜单导航
-   - 评论系统
-   - 网站样式
+3. **Configure Theme**
 
-4. **本地预览**
+   Edit `themes/anzhiyu/_config.yml` to customize:
+   - Avatar and social links
+   - Menu navigation
+   - Comment system
+   - Website styling
+
+4. **Local Preview**
    ```bash
    npm run server
    ```
 
-5. **部署到GitHub Pages**
+5. **Deploy to GitHub Pages**
    ```bash
    npm run deploy
    ```
 
 </details>
 
-## 📝 写作指南
+## 📝 Writing Guide
 
-### 创建新文章
+### Create New Articles
 
 ```bash
-# 创建新文章
-npx hexo new "文章标题"
+# Create new article
+npx hexo new "Article Title"
 
-# 创建新页面
-npx hexo new page "页面名称"
+# Create new page
+npx hexo new page "Page Name"
 ```
 
-### 文章格式
+### Article Format
 
 ```markdown
 ---
-title: 文章标题
+title: Article Title
 date: 2025-01-01 12:00:00
-tags: 
-  - 标签1
-  - 标签2
-categories: 
-  - 分类名
-cover: 封面图片URL
-description: 文章描述
+tags:
+  - Tag1
+  - Tag2
+categories:
+  - Category Name
+cover: Cover Image URL
+description: Article Description
 ---
 
-文章内容...
+Article content...
 ```
 
-### 本地预览
+### Local Preview
 
 ```bash
-# 启动本地服务器
+# Start local server
 npm run server
 
-# 清理缓存后启动
+# Clean cache and start
 npm run dev
 
-# 生成静态文件后预览
+# Generate static files and preview
 npm run preview
 ```
 
-## ⚙️ 配置说明
+## ⚙️ Configuration
 
-### 环境变量配置
+### Environment Variables Configuration
 
-在GitHub仓库的 Settings > Secrets and variables > Actions 中配置：
+Configure in GitHub repository Settings > Secrets and variables > Actions:
 
-| 变量名 | 说明 | 示例 |
-|--------|------|------|
-| `SITE_TITLE` | 网站标题 | 我的个人博客 |
-| `AUTHOR_NAME` | 作者姓名 | Your Name |
-| `SITE_URL` | 网站地址 | https://username.github.io/repo |
-| `GITHUB_URL` | GitHub主页 | https://github.com/username |
-| `AVATAR_URL` | 头像地址 | https://avatars.githubusercontent.com/u/xxx |
+| Variable Name | Description | Example |
+|---------------|-------------|---------|
+| `SITE_TITLE` | Website title | My Personal Blog |
+| `SITE_SUBTITLE` | Website subtitle | Recording life, sharing technology |
+| `SITE_DESCRIPTION` | Website description | Personal blog based on Hexo and AnZhiYu theme |
+| `AUTHOR_NAME` | Author name | Your Name |
+| `SITE_URL` | Website URL | https://username.github.io/repo |
+| `SITE_ROOT` | Root path | /repo/ |
 
-### 评论系统配置
+### Comment System Configuration
 
-支持多种评论系统，在 Secrets 中配置相应参数：
+Support for multiple comment systems, configure corresponding parameters in Secrets:
 
 - **Valine**: `VALINE_APP_ID`, `VALINE_APP_KEY`
 - **Waline**: `WALINE_SERVER_URL`
 - **Giscus**: `GISCUS_REPO`, `GISCUS_REPO_ID`, `GISCUS_CATEGORY_ID`
 
-详细配置请参考：[配置检查清单](docs/configuration-checklist.md)
+For detailed configuration, please refer to: [Configuration Checklist](docs/configuration-checklist.md)
 
-## 🛠️ 高级功能
+## 🛠️ Advanced Features
 
-### 自定义域名
+### Custom Domain
 
-1. 在 `source/` 目录下创建 `CNAME` 文件
-2. 文件内容为您的域名，如：`blog.example.com`
-3. 在域名DNS设置中添加CNAME记录指向 `username.github.io`
+1. Create a `CNAME` file in the `source/` directory
+2. File content should be your domain, e.g.: `blog.example.com`
+3. Add a CNAME record in your domain DNS settings pointing to `username.github.io`
 
-### 添加插件
+### Adding Plugins
 
 ```bash
-# 安装插件
+# Install plugin
 npm install hexo-plugin-name --save
 
-# 在 _config.yml 中配置插件
+# Configure plugin in _config.yml
 ```
 
-### 主题自定义
+### Theme Customization
 
-- 修改 `themes/anzhiyu/_config.yml` 配置文件
-- 在 `themes/anzhiyu/source/css/` 添加自定义样式
-- 详细说明：[主题自定义指南](docs/theme-customization.md)
+- Modify `themes/anzhiyu/_config.yml` configuration file
+- Add custom styles in `themes/anzhiyu/source/css/`
+- Detailed instructions: [Theme Customization Guide](docs/theme-customization.md)
 
 ## 🔧 详细配置说明
 
@@ -488,42 +497,42 @@ git pull origin main
 git branch -d post/new-article
 ```
 
-## 📚 文档
+## 📚 Documentation
 
-- [📋 配置检查清单](docs/configuration-checklist.md)
-- [🏗️ 项目结构说明](docs/project-structure.md)
-- [🚀 快速开始指南](docs/quick-start.md)
-- [🔧 故障排除指南](docs/troubleshooting.md)
+- [📋 Configuration Checklist](docs/configuration-checklist.md)
+- [🏗️ Project Structure](docs/project-structure.md)
+- [🚀 Quick Start Guide](docs/quick-start.md)
+- [🔧 Troubleshooting Guide](docs/troubleshooting.md)
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目基于 [MIT](LICENSE) 许可证开源。
+This project is open source under the [MIT](LICENSE) license.
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [Hexo](https://hexo.io/) - 快速、简洁且高效的博客框架
-- [AnZhiYu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu) - 简洁美观的Hexo主题
-- [GitHub Pages](https://pages.github.com/) - 免费的静态网站托管服务
+- [Hexo](https://hexo.io/) - Fast, simple & powerful blog framework
+- [AnZhiYu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu) - Clean and beautiful Hexo theme
+- [GitHub Pages](https://pages.github.com/) - Free static website hosting service
 
-## 📞 支持
+## 📞 Support
 
-如果这个项目对您有帮助，请给个 ⭐ Star 支持一下！
+If this project helps you, please give it a ⭐ Star!
 
-有问题？欢迎：
-- 📧 [提交 Issue](../../issues)
-- 💬 [参与讨论](../../discussions)
-- 📖 [查看文档](docs/)
+Have questions? Welcome to:
+- 📧 [Submit Issues](../../issues)
+- 💬 [Join Discussions](../../discussions)
+- 📖 [View Documentation](docs/)
 
 ---
 
-**开始您的博客之旅吧！** 🎉
+**Start your blogging journey!** 🎉
