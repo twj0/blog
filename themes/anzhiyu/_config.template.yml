@@ -1,0 +1,200 @@
+# AnZhiYu Theme Configuration Template
+# 主题配置模板文件
+
+menu:
+  文章:
+    隧道: /archives/ || anzhiyu-icon-box-archive
+    分类: /categories/ || anzhiyu-icon-shapes
+    标签: /tags/ || anzhiyu-icon-tags
+
+  友链:
+    友人帐: /link/ || anzhiyu-icon-link
+    留言板: /comments/ || anzhiyu-icon-envelope
+
+  关于:
+    关于本人: /about/ || anzhiyu-icon-paper-plane
+    随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
+
+# nav相关配置
+nav:
+  enable: false
+  travelling: false
+  clock: false
+
+# Code Blocks (代码相关)
+highlight_theme: light
+highlight_copy: true
+highlight_lang: true
+highlight_shrink: false
+highlight_height_limit: 330
+code_word_wrap: false
+
+# copy settings
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 50
+
+# social settings (社交图标设置)
+social:
+  Github: {{GITHUB_URL}} || anzhiyu-icon-github
+  # Email: mailto:{{EMAIL}} || anzhiyu-icon-envelope
+  # 可以添加更多社交链接
+
+# 作者卡片状态
+author_status:
+  enable: true
+  statusImg: "{{AUTHOR_STATUS_IMG}}"
+  skills:
+    - 🤖️ 数码科技爱好者
+    - 🔍 分享与热心帮助
+    - 🏠 智能家居小能手
+    - 🔨 设计开发一条龙
+
+# search (搜索)
+algolia_search:
+  enable: false
+
+local_search:
+  enable: true
+  preload: false
+  CDN:
+
+# Website Analytics (网站分析)
+baidu_analytics: {{BAIDU_ANALYTICS_ID}}
+google_analytics: {{GOOGLE_ANALYTICS_ID}}
+cloudflare_analytics: {{CLOUDFLARE_ANALYTICS_ID}}
+
+# Favicon（网站图标）
+favicon: {{FAVICON_URL}}
+
+# Avatar (头像)
+avatar:
+  img: {{AVATAR_URL}}
+  effect: false
+
+# The banner image of home page
+index_img: {{INDEX_IMG_URL}}
+
+# If the banner of page not setting, it will show the top_img
+default_top_img: {{DEFAULT_TOP_IMG_URL}}
+
+# Post copyright
+post_copyright:
+  enable: true
+  decode: false
+  author_href: {{AUTHOR_HREF}}
+  location: {{AUTHOR_LOCATION}}
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# Post edit
+post_edit:
+  enable: true
+  github: {{GITHUB_EDIT_URL}}
+
+# Share System (分享功能)
+sharejs:
+  enable: true
+  sites: facebook,twitter,wechat,weibo,qq
+
+# Comments System (评论系统)
+comments:
+  use: {{COMMENT_SYSTEM}} # valine, waline, twikoo, giscus
+  text: true
+  lazyload: false
+  count: false
+  card_post_count: false
+
+# Valine评论配置
+valine:
+  appId: {{VALINE_APP_ID}}
+  appKey: {{VALINE_APP_KEY}}
+  pageSize: 10
+  avatar: mp
+  lang: zh-CN
+  placeholder: {{VALINE_PLACEHOLDER}}
+  guest_info: nick,mail,link
+  recordIP: false
+  enableQQ: true
+  requiredFields: nick,mail
+
+# Waline评论配置
+waline:
+  serverURL: {{WALINE_SERVER_URL}}
+  bg: {{WALINE_BG}}
+  pageview: false
+
+# Giscus评论配置
+giscus:
+  repo: {{GISCUS_REPO}}
+  repo_id: {{GISCUS_REPO_ID}}
+  category_id: {{GISCUS_CATEGORY_ID}}
+  theme:
+    light: light
+    dark: dark
+
+# Footer settings
+footer:
+  owner:
+    enable: true
+    since: {{SITE_SINCE_YEAR}}
+  custom_text: {{FOOTER_CUSTOM_TEXT}}
+  copyright: true
+  
+  footerBar:
+    enable: true
+    authorLink: {{AUTHOR_LINK}}
+    linkList:
+      - link: {{GITHUB_REPO_URL}}
+        text: 源码
+      - link: {{THEME_REPO_URL}}
+        text: 主题
+
+# aside (侧边栏)
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: {{AUTHOR_DESCRIPTION}}
+    name_link: {{AUTHOR_LINK}}
+
+# Loading Animation (加载动画)
+preloader:
+  enable: true
+  source: 3
+  avatar: {{LOADING_AVATAR_URL}}
+
+# Background effects (背景特效)
+canvas_ribbon:
+  enable: false
+
+canvas_nest:
+  enable: false
+
+# PWA
+pwa:
+  enable: {{PWA_ENABLE}}
+  manifest: /manifest.json
+  theme_color: var(--anzhiyu-main)
+  apple_touch_icon: {{PWA_ICON_URL}}
+  favicon_32_32: {{PWA_FAVICON_32}}
+  favicon_16_16: {{PWA_FAVICON_16}}
+
+# Theme color
+theme_color:
+  enable: true
+  main: "{{THEME_COLOR_MAIN}}"
+  dark_main: "{{THEME_COLOR_DARK}}"
+  paginator: "{{THEME_COLOR_MAIN}}"
+
+# 其他配置保持默认值...
