@@ -774,7 +774,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg # 自定加载动画义头像
+  avatar: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANkaNN2J9TOkIlKla1v3Oz4WuuAVPYAAp3HMRu9W5hWHG1xMCc2PmsBAAMCAANtAAM2BA.png # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1031,7 +1031,7 @@ css_prefix: true
 
 # 首页顶部相关配置
 home_top:
-  enable: true # 开关
+  enable: false # 开关
   timemode: date #date/updated
   title: 鲜艳的红领巾
   subTitle: 飘扬在前胸~
@@ -1058,10 +1058,10 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: Youtube频道
-    title: CM喂饭干货满满
+    # tips: Youtube频道
+    # title: CM喂饭干货满满
     image: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png
-    link: https://www.youtube.com/@cmliussss
+    # link: https://www.youtube.com/@cmliussss
 
 # 朋友圈配置
 friends_vue:
