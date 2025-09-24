@@ -3,7 +3,7 @@ menu:
   推荐REC: /recommend/ || anzhiyu-icon-thumbs-up
   公益服务CSR: /csr/ || anzhiyu-icon-heart
   问题汇总FAQ: /faq/ || anzhiyu-icon-question-circle
-  关于CM: /about/ || anzhiyu-icon-info-circle
+
 
 # nav相关配置
 nav:
@@ -125,7 +125,7 @@ favicon: /favicon.ico
 # Avatar (头像)
 avatar:
   img: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANjaNNkVBya8IxwsjVjV0OX56cBVfAAAmzHMRu9W5hWUQdt98pE8RUBAAMCAAN4AAM2BA.png
-  effect: true # 头像特效
+  effect: false # 头像特效
 
 # Disable all banner image
 disable_top_img: false
@@ -765,6 +765,7 @@ subtitle:
     # - 生活明朗&#44;万物可爱&#44;人间值得&#44;未来可期.
 
 # Loading Animation (加载动画)
+# 访问网页时的加载动画
 preloader:
   enable: true
   # source
@@ -791,7 +792,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 吃饱了才有力气干活
+    description: welcome
     name_link: /
 
   card_announcement:
