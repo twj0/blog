@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * AnZhiYu主题自动更新脚本
  * 用于检查和更新AnZhiYu主题到最新版本

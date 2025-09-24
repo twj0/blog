@@ -4,8 +4,8 @@ date: 2025-01-01 12:00:00
 tags: 
   - 博客
   - 开始
-categories: 
-  - 日记
+categories:
+  - Share
 cover: https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800
 description: 这是我的第一篇博客文章，欢迎大家来到我的个人博客！
 ---

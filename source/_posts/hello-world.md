@@ -1,5 +1,13 @@
 ---
 title: Hello World
+date: 2025-09-17 12:00:00
+tags:
+  - Hexo
+  - 教程
+categories:
+  - Tech
+cover: https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800
+description: Hexo 博客系统的快速入门指南
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
