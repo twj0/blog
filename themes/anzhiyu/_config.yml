@@ -124,7 +124,7 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANjaNNkVBya8IxwsjVjV0OX56cBVfAAAmzHMRu9W5hWUQdt98pE8RUBAAMCAAN4AAM2BA.png
+  img: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANlaNOdRhSnWBsd4NUx7aVvqRD0SkAAAoLJMRtDfqBW986VsBBwTgUBAAMCAAN3AAM2BA.png
   effect: false # 头像特效
 
 # Disable all banner image
