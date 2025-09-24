@@ -1,8 +1,8 @@
 menu:
-  教程TUTORIAL: /tutorial/ || anzhiyu-icon-book
-  推荐REC: /recommend/ || anzhiyu-icon-thumbs-up
-  公益服务CSR: /csr/ || anzhiyu-icon-heart
-  问题汇总FAQ: /faq/ || anzhiyu-icon-question-circle
+  # 教程TUTORIAL: /tutorial/ || anzhiyu-icon-book
+  # 推荐REC: /recommend/ || anzhiyu-icon-thumbs-up
+  # 公益服务CSR: /csr/ || anzhiyu-icon-heart
+  # 问题汇总FAQ: /faq/ || anzhiyu-icon-question-circle
 
 
 # nav相关配置
@@ -25,7 +25,7 @@ nav:
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
 # 注意： 仅网站首页变灰，其他页面正常显示
 mourn:
-  enable: false
+  enable: ture
   days: [4-5, 5-12, 7-7, 9-18, 12-13]
 
 # Code Blocks (代码相关)
@@ -56,9 +56,9 @@ social:
 
 # 作者卡片 状态
 author_status:
-  enable: false
+  enable: true
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
-  statusImg: "https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png"
+  statusImg: "https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANmaNOi_2x-eDKrAS7FBpJJ1iJ7DBYAAp7JMRtDfqBWB8P0kaJcgUEBAAMCAAN4AAM2BA.png"
   skills:
     # - 🤖️ 数码科技爱好者
     # - 🔍 分享与热心帮助
@@ -68,6 +68,8 @@ author_status:
     # - 🏃 脚踏实地行动派
     # - 🧱 团队小组发动机
     # - 💢 壮汉人狠话不多
+    - 能源与动力工程本科
+    
 
 # search (搜索)
 # --------------------------------------
@@ -176,10 +178,10 @@ post_meta:
 
 # 主色调相关配置
 mainTone:
-  enable: true # true or false 文章是否启用获取图片主色调
+  enable: false # true or false 文章是否启用获取图片主色调
   mode: api # colorthief/cdn/api/both colorthief模式为前端获取图片主色调，cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取，可以在文章内配置main_color: '#3e5658'，使用十六进制颜色，则不会请求colorthief/cdn/api/both获取主色调，而是直接使用配置的颜色
   # 项目地址：https://github.com/anzhiyu-c/img2color-go
-  api: https://img2color-go.vercel.app/api?img=https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png # mode为api时可填写
+  api: https://img2color-go.vercel.app/api?img= # mode为api时可填写
   cover_change: true # 整篇文章跟随cover修改主色调
 
 # wordcount (字数统计)
@@ -775,7 +777,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANkaNN2J9TOkIlKla1v3Oz4WuuAVPYAAp3HMRu9W5hWHG1xMCc2PmsBAAMCAANtAAM2BA.png # 自定加载动画义头像
+  avatar: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANpaNOn9E-zj6iXuzVBml_t8Z5DqeIAAqnJMRtDfqBWdkQ5oBJKkXkBAAMCAAN4AAM2BA.png # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1059,10 +1061,10 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    # tips: Youtube频道
-    # title: CM喂饭干货满满
+    tips: Github
+    title: twj0
     image: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png
-    # link: https://www.youtube.com/@cmliussss
+    link: https://www.github.com/twj0
 
 # 朋友圈配置
 friends_vue:
