@@ -1,24 +1,9 @@
 menu:
-  # 文章:
-  #   隧道: /archives/ || anzhiyu-icon-box-archive
-  #   分类: /categories/ || anzhiyu-icon-shapes
-  #   标签: /tags/ || anzhiyu-icon-tags
-
-  # 友链:
-  #   友人帐: /link/ || anzhiyu-icon-link
-  #   朋友圈: /fcircle/ || anzhiyu-icon-artstation
-  #   留言板: /comments/ || anzhiyu-icon-envelope
-
-  # 我的:
-  #   音乐馆: /music/ || anzhiyu-icon-music
-  #   追番页: /bangumis/ || anzhiyu-icon-bilibili
-  #   相册集: /album/ || anzhiyu-icon-images
-  #   小空调: /air-conditioner/ || anzhiyu-icon-fan
-
-  # 关于:
-  #   关于本人: /about/ || anzhiyu-icon-paper-plane
-  #   闲言碎语: /essay/ || anzhiyu-icon-lightbulb
-  #   随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
+  教程TUTORIAL: /tutorial/ || anzhiyu-icon-book
+  推荐REC: /recommend/ || anzhiyu-icon-thumbs-up
+  公益服务CSR: /csr/ || anzhiyu-icon-heart
+  问题汇总FAQ: /faq/ || anzhiyu-icon-question-circle
+  关于CM: /about/ || anzhiyu-icon-info-circle
 
 # nav相关配置
 nav:
@@ -158,7 +143,7 @@ cover:
   archives_enable: true
   # the position of cover in home page (封面显示的位置)
   # left/right/both
-  position: left
+  position: both
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
     # - /img/default_cover.jpg
@@ -806,7 +791,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: # <div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div> # 默认为站点描述
+    description: 吃饱了才有力气干活
     name_link: /
 
   card_announcement:
@@ -1048,22 +1033,22 @@ css_prefix: true
 home_top:
   enable: true # 开关
   timemode: date #date/updated
-  title: 生活明朗
-  subTitle: 万物可爱。
-  siteText: anheyu.com
+  title: 鲜艳的红领巾
+  subTitle: 飘扬在前胸~
+  siteText: CMLiussss.com
   category:
-    - name: Daily
-      path: /categories/Daily/
+    - name: 科学上网
+      path: /categories/科学上网/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
-      icon: anzhiyu-icon-dove
-    - name: Share
-      path: /categories/Share/
+      icon: anzhiyu-icon-rocket
+    - name: 机场推荐
+      path: /categories/机场推荐/
       shadow: var(--anzhiyu-shadow-red)
       class: red
-      icon: anzhiyu-icon-fire
-    - name: Tech
-      path: /categories/Tech/
+      icon: anzhiyu-icon-plane
+    - name: 开发笔记
+      path: /categories/开发笔记/
       shadow: var(--anzhiyu-shadow-green)
       class: green
       icon: anzhiyu-icon-book
@@ -1073,10 +1058,10 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 新品主题
-    title: Theme-AnZhiYu
-    image: https://bu.dusays.com/2023/05/13/645fa3cf90d70.webp
-    link: https://docs.anheyu.com/
+    tips: Youtube频道
+    title: CM喂饭干货满满
+    image: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png
+    link: https://www.youtube.com/@cmliussss
 
 # 朋友圈配置
 friends_vue:
