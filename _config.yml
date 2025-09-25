@@ -103,11 +103,16 @@ theme: anzhiyu
 pug:
   pretty: true
 
-# Deployment
-## Note: This project uses GitHub Actions for deployment
-## The deploy config below is for manual deployment only (not used in current setup)
+# Deployment - Multi-platform configuration
 ## Docs: https://hexo.io/docs/one-command-deployment
+## Hexo supports multiple deployers and will execute each deployer in order
 deploy:
-  type: git
-  repo: https://github.com/twj0/blog.git
-  branch: gh-pages
+  - type: git
+    repo: https://github.com/twj0/blog.git
+    branch: gh-pages
+    message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  # 添加第二个部署目标示例（如果需要）
+  # - type: git
+  #   repo: https://github.com/twj0/blog-backup.git
+  #   branch: main
+  #   message: "Backup updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"

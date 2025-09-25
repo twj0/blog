@@ -1,11 +1,13 @@
 # 🚀 Personal Blog Template
 
-[![Deploy Status](https://github.com/twj0/blog/workflows/Deploy%20Blog%20to%20GitHub%20Pages/badge.svg)](https://github.com/twj0/blog/actions)
+[![Multi-Platform Deploy](https://github.com/twj0/blog/workflows/Multi-Platform%20Deploy%20(GitHub%20Pages%20+%20Cloudflare%20Pages)/badge.svg)](https://github.com/twj0/blog/actions)
 [![Hexo Version](https://img.shields.io/badge/Hexo-7.3.0-blue)](https://hexo.io/)
 [![Theme](https://img.shields.io/badge/Theme-AnZhiYu-orange)](https://github.com/anzhiyu-c/hexo-theme-anzhiyu)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://twj0.github.io/blog/)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-Live-orange)](https://hexo-blog.pages.dev)
 
-A personal blog template based on **Hexo** + **AnZhiYu** theme with **GitHub Actions** auto-deployment, enabling you to quickly build your own personal blog!
+A personal blog template based on **Hexo** + **AnZhiYu** theme with **Multi-Platform Auto-Deployment**, enabling you to quickly build your own personal blog and deploy it simultaneously to **GitHub Pages** and **Cloudflare Pages**!
 
 ## 🌐 Multi-Language Documentation
 
@@ -18,13 +20,15 @@ A personal blog template based on **Hexo** + **AnZhiYu** theme with **GitHub Act
 ## ✨ Features
 
 - 🎨 **Modern Design** - Based on AnZhiYu theme with beautiful and elegant interface
-- 🚀 **Auto Deployment** - Automated build and deployment with GitHub Actions
+- 🚀 **Multi-Platform Auto Deployment** - Simultaneously deploy to GitHub Pages and Cloudflare Pages
+- 🌐 **Dual CDN Acceleration** - Global access optimization with multiple deployment targets
 - 📱 **Responsive Layout** - Perfect adaptation for desktop and mobile devices
 - 💬 **Multiple Comment Systems** - Support for Valine, Waline, Giscus, and more
 - 🔍 **Search Functionality** - Built-in local search for quick content discovery
 - 📊 **Analytics Integration** - Support for various website analytics tools
 - 🌙 **Dark Mode** - Automatic dark/light theme switching
 - ⚡ **Performance Optimized** - Image lazy loading, code highlighting, and more
+- 🔄 **Content Synchronization** - Automatic content sync across all platforms
 
 ## 🎯 Quick Start
 
@@ -60,9 +64,27 @@ A personal blog template based on **Hexo** + **AnZhiYu** theme with **GitHub Act
    git push origin main
    ```
 
-5. **Access Your Blog**
+5. **Configure Multi-Platform Deployment (Optional)**
+
+   To enable Cloudflare Pages deployment, configure the following in your repository:
+
+   **GitHub Repository Settings > Secrets and variables > Actions:**
+
+   **Secrets:**
+   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
+   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+
+   **Variables:**
+   - `CLOUDFLARE_PROJECT_NAME`: Your Cloudflare Pages project name (e.g., `hexo-blog`)
+
+   📖 **Detailed Setup Guide**: [Cloudflare Configuration Guide](docs/cloudflare-setup-guide.md)
+
+6. **Access Your Blog**
+
+   After deployment, your blog will be available on both platforms:
    ```
-   https://yourusername.github.io/blog
+   GitHub Pages:    https://yourusername.github.io/blog
+   Cloudflare Pages: https://your-project-name.pages.dev
    ```
 
 ### Method 2: Manual Configuration
@@ -180,13 +202,107 @@ Support for multiple comment systems, configure corresponding parameters in Secr
 
 For detailed configuration, please refer to: [Configuration Checklist](docs/configuration-checklist.md)
 
-## 🛠️ Advanced Features
+## 🌐 Multi-Platform Deployment
 
-### Custom Domain
+This template supports **simultaneous deployment** to multiple platforms, providing better global accessibility and redundancy.
 
+### 🚀 Supported Platforms
+
+| Platform | URL Format | Features |
+|----------|------------|----------|
+| **GitHub Pages** | `https://username.github.io/repo` | Free, integrated with GitHub, good for developers |
+| **Cloudflare Pages** | `https://project-name.pages.dev` | Global CDN, fast loading, custom domains |
+
+### 📋 Deployment Methods
+
+#### Method 1: Cloudflare Pages Direct Connection (Recommended)
+
+**Features:**
+- ✅ **Simplest setup** - No code changes required
+- ✅ **Automatic builds** - Triggers on Git push
+- ✅ **Independent deployment** - Runs parallel to GitHub Actions
+- ✅ **Global CDN** - Faster worldwide access
+
+**Setup Steps:**
+1. **Connect to Cloudflare Pages** (see [Simple Setup Guide](docs/cloudflare-simple-setup.md))
+2. **Configure build settings**: `npm run build` → `public`
+3. **Deploy automatically** on every Git push
+
+#### Method 2: GitHub Actions Multi-Platform Deploy
+
+**Features:**
+- ✅ Advanced control over deployment process
+- ✅ Custom build steps and optimizations
+- ✅ Detailed deployment logs
+
+**Setup Steps:**
+1. **Configure Cloudflare API** (see [Advanced Setup Guide](docs/cloudflare-setup-guide.md))
+2. **Enable GitHub Actions workflow**
+3. **Monitor deployment status** in GitHub Actions
+
+#### Method 3: Local Multi-Repository Deploy
+
+**Features:**
+- ✅ Local control over deployment
+- ✅ Support for multiple Git repositories
+- ✅ Custom deployment scripts
+
+**Usage:**
+```bash
+# Deploy to all configured platforms
+npm run multi-deploy
+
+# Traditional single deployment
+npm run deploy
+```
+
+### 🔄 Content Synchronization
+
+When you update your blog:
+
+1. **Push to GitHub** → Triggers GitHub Actions
+2. **GitHub Actions** → Builds static files
+3. **Parallel Deployment** → Updates both platforms simultaneously
+4. **Content Sync** → Both sites show identical content
+
+### 📊 Platform Comparison
+
+| Feature | GitHub Pages | Cloudflare Pages |
+|---------|--------------|------------------|
+| **Build Time** | ~2-3 minutes | ~1-2 minutes |
+| **Global CDN** | Limited | Excellent |
+| **Custom Domain** | Yes | Yes (with SSL) |
+| **Bandwidth** | 100GB/month | Unlimited |
+| **Build Minutes** | 2000/month | 500/month |
+| **Analytics** | Third-party | Built-in |
+
+### 🛠️ Advanced Features
+
+#### Custom Domain Configuration
+
+**For GitHub Pages:**
 1. Create a `CNAME` file in the `source/` directory
 2. File content should be your domain, e.g.: `blog.example.com`
 3. Add a CNAME record in your domain DNS settings pointing to `username.github.io`
+
+**For Cloudflare Pages:**
+1. Add custom domain in Cloudflare Pages dashboard
+2. Configure DNS records automatically through Cloudflare
+3. SSL certificates are automatically provisioned
+
+#### Performance Optimization
+
+```bash
+# Enable image optimization
+npm install hexo-filter-optimize --save
+
+# Configure in _config.yml
+filter_optimize:
+  enable: true
+  css: true
+  js: true
+  html: true
+```
 
 ### Adding Plugins
 
@@ -499,6 +615,13 @@ git branch -d post/new-article
 
 ## 📚 Documentation
 
+### 🚀 Deployment Guides
+- [⚡ Quick Multi-Platform Setup](MULTI-PLATFORM-SETUP.md) - **3-minute setup guide**
+- [🌐 Cloudflare Simple Setup](docs/cloudflare-simple-setup.md) - **Recommended method**
+- [🔧 Advanced Deployment Guide](docs/deployment-guide.md) - Complete deployment instructions
+- [☁️ Cloudflare API Setup](docs/cloudflare-setup-guide.md) - Advanced GitHub Actions method
+
+### 📋 Configuration & Setup
 - [📋 Configuration Checklist](docs/configuration-checklist.md)
 - [🏗️ Project Structure](docs/project-structure.md)
 - [🚀 Quick Start Guide](docs/quick-start.md)
