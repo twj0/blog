@@ -558,8 +558,8 @@ hexo.extend.filter.register(
       },
       diytitle: {
         enable: true,
-        leaveTitle: "莫愁前路无知己",
-        backTitle: "天下谁人不识君",
+        leaveTitle: "行子匆匆，風流總被吹散",
+        backTitle: "別來無恙，蓬門隨時待君",
       },
       comment_barrage_config: {
         enable: false,

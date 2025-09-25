@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!highLight) return;
 
     const { highlightCopy, highlightLang, highlightHeightLimit, plugin } = highLight;
-    const isHighlightShrink = GLOBAL_CONFIG_SITE.isHighlightShrink;
+    const isHighlightShrink = (typeof GLOBAL_CONFIG_SITE !== 'undefined') ? GLOBAL_CONFIG_SITE.isHighlightShrink : undefined;
     const isShowTool = highlightCopy || highlightLang || isHighlightShrink !== undefined;
     const $figureHighlight =
       plugin === "highlight.js"
@@ -681,7 +681,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * toc,anchor
    */
   const scrollFnToDo = function () {
-    const isToc = GLOBAL_CONFIG_SITE.isToc;
+    const isToc = (typeof GLOBAL_CONFIG_SITE !== 'undefined') ? GLOBAL_CONFIG_SITE.isToc : false;
     const isAnchor = GLOBAL_CONFIG.isAnchor;
     const $article = document.getElementById("article-container");
 
@@ -799,7 +799,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuDarkmodeText.textContent = "浅色模式";
     }
 
-    if (!GLOBAL_CONFIG_SITE.isPost) {
+    if (typeof GLOBAL_CONFIG_SITE === 'undefined' || !GLOBAL_CONFIG_SITE.isPost) {
       const root = document.querySelector(":root");
       root.style.setProperty("--anzhiyu-bar-background", "var(--anzhiyu-meta-theme-color)");
       requestAnimationFrame(() => {
@@ -1106,7 +1106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const addPostOutdateNotice = function () {
     const data = GLOBAL_CONFIG.noticeOutdate;
-    const diffDay = anzhiyu.diffDate(GLOBAL_CONFIG_SITE.postUpdate);
+    const diffDay = (typeof GLOBAL_CONFIG_SITE !== 'undefined' && GLOBAL_CONFIG_SITE.postUpdate) ? anzhiyu.diffDate(GLOBAL_CONFIG_SITE.postUpdate) : 0;
     if (diffDay >= data.limitDay) {
       const ele = document.createElement("div");
       ele.className = "post-outdate-notice";
@@ -1254,7 +1254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 文章内
     if (GLOBAL_CONFIG.mainTone) {
-      if (GLOBAL_CONFIG_SITE.postMainColor) {
+      if (typeof GLOBAL_CONFIG_SITE !== 'undefined' && GLOBAL_CONFIG_SITE.postMainColor) {
         let value = GLOBAL_CONFIG_SITE.postMainColor;
         if (getContrastYIQ(value) === "light") {
           value = LightenDarkenColor(colorHex(value), -40);
@@ -1704,17 +1704,26 @@ document.addEventListener("DOMContentLoaded", function () {
     let OriginTitile = document.title;
     let titleTime;
 
+    console.log('diytitle功能已启用');
+    console.log('原始标题:', OriginTitile);
+    console.log('离开标题:', leaveTitle);
+    console.log('返回标题:', backTitle);
+
     document.addEventListener("visibilitychange", function () {
+      console.log('visibilitychange事件触发, document.hidden:', document.hidden);
       if (document.hidden) {
         //离开当前页面时标签显示内容
         document.title = leaveTitle;
+        console.log('页面隐藏，标题改为:', leaveTitle);
         clearTimeout(titleTime);
       } else {
         //返回当前页面时标签显示内容
         document.title = backTitle + OriginTitile;
+        console.log('页面显示，标题改为:', backTitle + OriginTitile);
         //两秒后变回正常标题
         titleTime = setTimeout(function () {
           document.title = OriginTitile;
+          console.log('2秒后恢复标题为:', OriginTitile);
         }, 2000);
       }
     });
@@ -1776,7 +1785,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     addDarkModeEventListener("console", ".darkmode_switchbutton");
 
-    if (GLOBAL_CONFIG_SITE.isPost) {
+    if (typeof GLOBAL_CONFIG_SITE !== 'undefined' && GLOBAL_CONFIG_SITE.isPost) {
       GLOBAL_CONFIG.noticeOutdate !== undefined && addPostOutdateNotice();
       GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll("#post-meta time"));
     } else {
@@ -1790,9 +1799,15 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleCardCategory();
     }
 
-    GLOBAL_CONFIG.diytitle && changeDocumentTitle();
+    console.log('检查 GLOBAL_CONFIG.diytitle:', GLOBAL_CONFIG.diytitle);
+    if (GLOBAL_CONFIG.diytitle && GLOBAL_CONFIG.diytitle.enable) {
+      console.log('在 refreshFn 中初始化 diytitle');
+      changeDocumentTitle();
+    } else {
+      console.log('diytitle 功能未启用或配置错误');
+    }
     scrollFnToDo();
-    GLOBAL_CONFIG_SITE.isHome && scrollDownInIndex();
+    (typeof GLOBAL_CONFIG_SITE !== 'undefined' && GLOBAL_CONFIG_SITE.isHome) && scrollDownInIndex();
     addHighlightTool();
     GLOBAL_CONFIG.isPhotoFigcaption && addPhotoFigcaption();
     scrollFn();
@@ -1822,7 +1837,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // needRefresh
     // nav中间的标题变化
-    document.getElementById("page-name").innerText = document.title.split(` | ${GLOBAL_CONFIG_SITE.configTitle}`)[0];
+    if (typeof GLOBAL_CONFIG_SITE !== 'undefined' && GLOBAL_CONFIG_SITE.configTitle) {
+      document.getElementById("page-name").innerText = document.title.split(` | ${GLOBAL_CONFIG_SITE.configTitle}`)[0];
+    }
     anzhiyu.initIndexEssay();
     anzhiyu.changeTimeInEssay();
     anzhiyu.removeBodyPaceClass();
@@ -1848,6 +1865,20 @@ document.addEventListener("DOMContentLoaded", function () {
         addFriendLinksInFooter();
       }
     }, 200);
+
+    // 初始化 diytitle 功能
+    setTimeout(() => {
+      console.log('页面加载完成，检查 diytitle 配置');
+      console.log('GLOBAL_CONFIG:', typeof GLOBAL_CONFIG !== 'undefined' ? GLOBAL_CONFIG : 'undefined');
+      console.log('GLOBAL_CONFIG_SITE:', typeof GLOBAL_CONFIG_SITE !== 'undefined' ? GLOBAL_CONFIG_SITE : 'undefined');
+
+      if (typeof GLOBAL_CONFIG !== 'undefined' && GLOBAL_CONFIG && GLOBAL_CONFIG.diytitle && GLOBAL_CONFIG.diytitle.enable) {
+        console.log('页面加载时初始化 diytitle');
+        changeDocumentTitle();
+      } else {
+        console.log('页面加载时 diytitle 功能未启用');
+      }
+    }, 500); // 延迟500ms确保所有配置都已加载
   };
 
   initRightMenu();
