@@ -409,18 +409,18 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text:
+  custom_text: 📢 欢迎光临我的博客！ 🎉
   runtime:
-    enable: false
-    launch_time: 04/01/2021 00:00:00 # 网站上线时间
+    enable: true
+    launch_time: 01/01/2025 00:00:00 # 网站上线时间
     work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
-    work_description: 距离月入25k也就还差一个大佬带我~
+    work_description: 📈 今日访问人数正在统计中~ 📊 当前在线人数实时更新中~
     offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
-    offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
+    offduty_description: 🌙 感谢您的访问，晚安好梦~ ✨
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
-    enable: false
+    enable: true
     list:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
@@ -428,15 +428,15 @@ footer:
       - link: https://hexo.anheyu.com/
         shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
         message: 本站使用AnZhiYu主题
-      # - link: https://www.dogecloud.com/
-      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg
-      #   message: 本站使用多吉云为静态资源提供CDN加速
-      # - link: https://github.com/
-      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
-      #   message: 本站项目由Github托管
-      # - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
-      #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
-      #   message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
+      - link: https://www.cloudflare.com/
+        shields: https://img.shields.io/badge/CDN-Cloudflare-orange?style=flat&logo=cloudflare
+        message: 本站使用Cloudflare为静态资源提供CDN加速
+      - link: https://github.com/twj0/blog
+        shields: https://img.shields.io/badge/Source-Github-black?style=flat&logo=github
+        message: 本站项目由Github托管
+      - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
+        shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
+        message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
   socialBar:
     enable: false
     centerImg:
@@ -834,15 +834,15 @@ aside:
 # busuanzi count for PV / UV in site
 # 访问人数
 busuanzi:
-  site_uv: false
-  site_pv: false
-  page_pv: false
+  site_uv: true
+  site_pv: true
+  page_pv: true
 
 # Time difference between publish date and now (网页运行时间)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: true
-  publish_date: 4/1/2021 00:00:00
+  publish_date: 1/1/2025 00:00:00
 
 # Console - Newest Comments
 newest_comments:
