@@ -4,13 +4,37 @@
 
 这是一个基于 Hexo 和 AnZhiYu 主题的个人博客项目。
 
-## 文档目录
+## 📚 文档目录
 
-### 修复指南
+### 🚀 快速开始
+- [🚀 快速自定义指南](./quick-customization-guide.md) - **推荐新手使用**
+- [配置优先级说明](./configuration-priority-guide.md)
 
+### 🎨 个性化配置
+- [🎨 完整自定义指南](./anzhiyu-customization-complete-guide.md) - **功能全面详细**
+- [主题个性化指南](./personalization-guide.md)
+- [AnZhiYu自定义配置](./anzhiyu-customization-guide.md)
+- [主题自定义方法](./theme-customization.md)
+
+### 🔧 技术文档
 - [diytitle 功能修复指南](./diytitle-fix-guide.md) - 修复 AnZhiYu 主题动态标题功能的完整指南
+- [Hexo AnZhiYu完整自定义指南](./hexo-anzhiyu-customization-complete-guide.md)
 
 ## 最近更新
+
+### 2025年1月25日 - 完整自定义文档发布
+
+**新增文档：**
+- 📚 [完整自定义指南](./anzhiyu-customization-complete-guide.md) - 涵盖所有自定义选项的详细指南
+- 🚀 [快速自定义指南](./quick-customization-guide.md) - 新手友好的快速配置指南
+
+**文档特色：**
+- ✅ 18个主要自定义类别
+- ✅ 300+ 配置选项详解
+- ✅ 预设配色方案
+- ✅ 自定义CSS/JS示例
+- ✅ 故障排除指南
+- ✅ 最佳实践建议
 
 ### 2025年1月25日 - diytitle 功能修复
 
