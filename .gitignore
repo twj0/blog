@@ -19,5 +19,4 @@ themes/anzhiyu/_config.personal.yml
 # Backup files
 *.backup
 *.bak
-package-lock.json
-pnpm-lock.yaml
+
