@@ -1043,22 +1043,22 @@ home_top:
       icon: anzhiyu-icon-paper-plane
     - name: Daily
       path: /categories/Daily/
-      shadow: var(--anzhiyu-shadow-green)
-      class: green
+      shadow: var(--anzhiyu-shadow-red)
+      class: red
       icon: anzhiyu-icon-book
     - name: Topic
       path: /categories/Topic/
-      shadow: var(--anzhiyu-shadow-red)
-      class: red
+      shadow: var(--anzhiyu-shadow-yellow)
+      class: yellow
       icon: anzhiyu-icon-lightbulb
     - name: Tech
       path: /categories/Tech/
-      shadow: var(--anzhiyu-shadow-orange)
-      class: orange
+      shadow: var(--anzhiyu-shadow-green)
+      class: green
       icon: anzhiyu-icon-code
   default_descr: 再怎么看我也不知道怎么描述它的啦！
   swiper:
-    enable: false
+    enable: enable
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
