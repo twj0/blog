@@ -64,28 +64,76 @@ A personal blog template based on **Hexo** + **AnZhiYu** theme with **Multi-Plat
    git push origin main
    ```
 
-5. **Configure Multi-Platform Deployment (Optional)**
+5. **Configure Cloudflare Pages (Optional)**
 
-   To enable Cloudflare Pages deployment, configure the following in your repository:
+   To enable Cloudflare Pages deployment for global CDN acceleration:
 
-   **GitHub Repository Settings > Secrets and variables > Actions:**
+   **Step 1**: Visit [Cloudflare Dashboard](https://dash.cloudflare.com/)
 
-   **Secrets:**
-   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
-   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+   **Step 2**: Pages → Create a project → Connect to Git
 
-   **Variables:**
-   - `CLOUDFLARE_PROJECT_NAME`: Your Cloudflare Pages project name (e.g., `hexo-blog`)
+   **Step 3**: Select your GitHub repository
 
-   📖 **Detailed Setup Guide**: [Cloudflare Configuration Guide](docs/cloudflare-setup-guide.md)
+   **Step 4**: Configure build settings:
+   ```
+   Build command: npx hexo generate --config _config.cloudflare.yml
+   Build output directory: public
+   Environment variables: NODE_VERSION = 18
+   ```
+
+   📖 **Detailed Setup Guide**: [Cloudflare Pages Solution](CLOUDFLARE-SOLUTION.md)
 
 6. **Access Your Blog**
 
    After deployment, your blog will be available on both platforms:
    ```
-   GitHub Pages:    https://yourusername.github.io/blog
+   GitHub Pages:     https://yourusername.github.io/blog
    Cloudflare Pages: https://your-project-name.pages.dev
    ```
+
+## 🌐 Multi-Platform Deployment Architecture
+
+This project supports simultaneous deployment to multiple platforms with optimized configurations:
+
+### 📋 Platform Comparison
+
+| Feature | GitHub Pages | Cloudflare Pages |
+|---------|-------------|------------------|
+| **CDN** | GitHub's CDN | Cloudflare Global CDN |
+| **Speed** | Good | Excellent (Global) |
+| **Configuration** | `_config.yml` | `_config.cloudflare.yml` |
+| **URL Structure** | `/blog/` subpath | Root domain |
+| **Build Command** | `npm run build` | `npx hexo generate --config _config.cloudflare.yml` |
+| **Deployment** | GitHub Actions | Direct Git Integration |
+
+### 🔄 How It Works
+
+```
+📝 Push Code to GitHub
+         ↓
+    ┌─────────┬─────────┐
+    ↓         ↓         ↓
+GitHub    Cloudflare   Local Dev
+Actions    Pages      Environment
+    ↓         ↓         ↓
+Uses       Uses        Uses
+_config.yml _config.    _config.yml
+           cloudflare.yml
+    ↓         ↓         ↓
+Deploys to Deploys to  Local Preview
+GitHub     Cloudflare
+Pages      Pages
+    ↓         ↓
+✅ Content Synchronized ✅
+```
+
+### 🎯 Benefits
+
+- **🚀 Performance**: Cloudflare's global CDN provides faster loading times worldwide
+- **🔄 Redundancy**: Multiple deployment targets ensure high availability
+- **🌍 Global Reach**: Optimized content delivery for international audiences
+- **⚡ Zero Downtime**: Independent deployments prevent service interruption
+- **📊 Analytics**: Compare performance across different platforms
 
 ### Method 2: Manual Configuration
 
@@ -613,11 +661,37 @@ git pull origin main
 git branch -d post/new-article
 ```
 
+## 🔧 Quick Troubleshooting
+
+### 🌐 Cloudflare Pages Issues
+
+**Problem**: CSS/JS files not loading on Cloudflare Pages
+```bash
+# ✅ Solution: Use correct build command
+npx hexo generate --config _config.cloudflare.yml
+```
+
+**Problem**: 404 errors or wrong paths
+```yaml
+# ✅ Check _config.cloudflare.yml
+root: /  # Must be root path for Cloudflare Pages
+url: https://your-project-name.pages.dev
+```
+
+### 📋 Build Issues
+
+**Problem**: Build fails
+- ✅ Check Node.js version (use 18+)
+- ✅ Verify `_config.cloudflare.yml` exists
+- ✅ Set environment variable: `NODE_VERSION = 18`
+
+📖 **Complete Guide**: [Cloudflare Pages Solution](CLOUDFLARE-SOLUTION.md)
+
 ## 📚 Documentation
 
 ### 🚀 Deployment Guides
 - [⚡ Quick Multi-Platform Setup](MULTI-PLATFORM-SETUP.md) - **3-minute setup guide**
-- [🌐 Cloudflare Simple Setup](docs/cloudflare-simple-setup.md) - **Recommended method**
+- [🌐 Cloudflare Pages Solution](CLOUDFLARE-SOLUTION.md) - **CSS/JS fix guide**
 - [🔧 Advanced Deployment Guide](docs/deployment-guide.md) - Complete deployment instructions
 - [☁️ Cloudflare API Setup](docs/cloudflare-setup-guide.md) - Advanced GitHub Actions method
 
@@ -646,6 +720,7 @@ This project is open source under the [MIT](LICENSE) license.
 - [Hexo](https://hexo.io/) - Fast, simple & powerful blog framework
 - [AnZhiYu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu) - Clean and beautiful Hexo theme
 - [GitHub Pages](https://pages.github.com/) - Free static website hosting service
+- [Cloudflare Pages](https://pages.cloudflare.com/) - Global CDN and edge computing platform
 
 ## 📞 Support
 

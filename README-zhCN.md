@@ -18,13 +18,15 @@
 ## ✨ 特性
 
 - 🎨 **现代化设计** - 基于AnZhiYu主题，界面美观大方
-- 🚀 **自动部署** - GitHub Actions自动构建和部署
+- 🚀 **多平台自动部署** - 同时部署到 GitHub Pages 和 Cloudflare Pages
+- 🌐 **双CDN加速** - 全球访问优化，多重部署目标
 - 📱 **响应式布局** - 完美适配桌面端和移动端
 - 💬 **多评论系统** - 支持Valine、Waline、Giscus等
 - 🔍 **搜索功能** - 内置本地搜索，快速查找内容
 - 📊 **数据统计** - 支持多种网站分析工具
 - 🌙 **深色模式** - 自动切换深色/浅色主题
 - ⚡ **性能优化** - 图片懒加载、代码高亮等优化
+- 🔄 **内容同步** - 所有平台内容自动同步
 
 ## 🎯 快速开始
 
@@ -53,16 +55,38 @@
    - Source 选择 "GitHub Actions"
    - 保存设置
 
-4. **推送代码，自动部署**
+4. **配置 Cloudflare Pages（可选）**
+
+   为了获得全球 CDN 加速，可以添加 Cloudflare Pages 部署：
+
+   **步骤 1**: 访问 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+
+   **步骤 2**: Pages → Create a project → Connect to Git
+
+   **步骤 3**: 选择您的 GitHub 仓库
+
+   **步骤 4**: 配置构建设置：
+   ```
+   构建命令: npx hexo generate --config _config.cloudflare.yml
+   构建输出目录: public
+   环境变量: NODE_VERSION = 18
+   ```
+
+   📖 **详细设置指南**: [Cloudflare Pages 解决方案](CLOUDFLARE-SOLUTION.md)
+
+5. **推送代码，自动部署**
    ```bash
    git add .
    git commit -m "Initial blog setup"
    git push origin main
    ```
 
-5. **访问您的博客**
+6. **访问您的博客**
+
+   部署完成后，您的博客将在两个平台上可用：
    ```
-   https://yourusername.github.io/blog
+   GitHub Pages:     https://yourusername.github.io/blog
+   Cloudflare Pages: https://your-project-name.pages.dev
    ```
 
 ### 方法二：手动配置
@@ -203,8 +227,75 @@ npm install hexo-plugin-name --save
 - 在 `themes/anzhiyu/source/css/` 添加自定义样式
 - 详细说明：[主题自定义指南](docs/theme-customization.md)
 
+## 🌐 多平台部署架构
+
+本项目支持同时部署到多个平台，配置优化：
+
+### 📋 平台对比
+
+| 功能 | GitHub Pages | Cloudflare Pages |
+|------|-------------|------------------|
+| **CDN** | GitHub CDN | Cloudflare 全球 CDN |
+| **速度** | 良好 | 优秀（全球加速） |
+| **配置** | `_config.yml` | `_config.cloudflare.yml` |
+| **URL结构** | `/blog/` 子路径 | 根域名 |
+| **构建命令** | `npm run build` | `npx hexo generate --config _config.cloudflare.yml` |
+
+### 🔄 工作原理
+
+```
+📝 推送代码到 GitHub
+         ↓
+    ┌─────────┬─────────┐
+    ↓         ↓         ↓
+GitHub    Cloudflare   本地开发
+Actions    Pages      环境
+    ↓         ↓         ↓
+使用        使用        使用
+_config.yml _config.    _config.yml
+           cloudflare.yml
+    ↓         ↓         ↓
+部署到      部署到      本地预览
+GitHub     Cloudflare
+Pages      Pages
+    ↓         ↓
+✅ 内容同步 ✅
+```
+
+## 🔧 快速故障排除
+
+### 🌐 Cloudflare Pages 问题
+
+**问题**: CSS/JS 文件无法加载
+```bash
+# ✅ 解决方案：使用正确的构建命令
+npx hexo generate --config _config.cloudflare.yml
+```
+
+**问题**: 404 错误或路径错误
+```yaml
+# ✅ 检查 _config.cloudflare.yml
+root: /  # Cloudflare Pages 必须使用根路径
+url: https://your-project-name.pages.dev
+```
+
+### 📋 构建问题
+
+**问题**: 构建失败
+- ✅ 检查 Node.js 版本（使用 18+）
+- ✅ 确认 `_config.cloudflare.yml` 存在
+- ✅ 设置环境变量：`NODE_VERSION = 18`
+
+📖 **完整指南**: [Cloudflare Pages 解决方案](CLOUDFLARE-SOLUTION.md)
+
 ## 📚 文档
 
+### 🚀 部署指南
+- [⚡ 快速多平台设置](MULTI-PLATFORM-SETUP.md) - **3分钟设置指南**
+- [🌐 Cloudflare Pages 解决方案](CLOUDFLARE-SOLUTION.md) - **CSS/JS 修复指南**
+- [🔧 高级部署指南](docs/deployment-guide.md) - 完整部署说明
+
+### 📋 配置与设置
 - [📋 配置检查清单](docs/configuration-checklist.md)
 - [🏗️ 项目结构说明](docs/project-structure.md)
 - [🚀 快速开始指南](docs/quick-start.md)
@@ -229,6 +320,7 @@ npm install hexo-plugin-name --save
 - [Hexo](https://hexo.io/) - 快速、简洁且高效的博客框架
 - [AnZhiYu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu) - 简洁美观的Hexo主题
 - [GitHub Pages](https://pages.github.com/) - 免费的静态网站托管服务
+- [Cloudflare Pages](https://pages.cloudflare.com/) - 全球 CDN 和边缘计算平台
 
 ## 📞 支持
 

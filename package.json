@@ -9,7 +9,7 @@
     "multi-deploy": "node scripts/multi-deploy.js",
     "setup-multi-platform": "node scripts/setup-multi-platform.js",
     "test-build": "node scripts/test-build.js",
-    "build:cloudflare": "node scripts/build-cloudflare.js",
+    "build:cloudflare": "npx hexo generate --config _config.cloudflare.yml",
     "server": "hexo server",
     "setup": "node scripts/setup.js",
     "dev": "hexo clean && hexo server",
