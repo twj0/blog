@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调试 diytitle 功能</title>
+</head>
+<body>
+    <h1>diytitle 功能调试页面</h1>
+    <div id="debug-info">
+        <h3>调试信息：</h3>
+        <div id="log"></div>
+    </div>
+    
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const p = document.createElement('p');
+            p.textContent = new Date().toLocaleTimeString() + ': ' + message;
+            logDiv.appendChild(p);
+            console.log(message);
+        }
+        
+        // 检查Page Visibility API支持
+        if (typeof document.hidden !== "undefined") {
+            log("✅ Page Visibility API 支持 document.hidden");
+        } else if (typeof document.msHidden !== "undefined") {
+            log("⚠️ 使用 document.msHidden (IE)");
+        } else if (typeof document.webkitHidden !== "undefined") {
+            log("⚠️ 使用 document.webkitHidden (WebKit)");
+        } else {
+            log("❌ Page Visibility API 不支持");
+        }
+        
+        // 检查visibilitychange事件支持
+        if (typeof document.addEventListener !== "undefined") {
+            log("✅ addEventListener 支持");
+        } else {
+            log("❌ addEventListener 不支持");
+        }
+        
+        // 模拟AnZhiYu的配置
+        const GLOBAL_CONFIG = {
+            diytitle: {
+                enable: true,
+                leaveTitle: "行子匆匆，風流總被吹散",
+                backTitle: "別來無恙，蓬門隨時待君"
+            }
+        };
+        
+        log("GLOBAL_CONFIG.diytitle: " + JSON.stringify(GLOBAL_CONFIG.diytitle));
+        
+        function changeDocumentTitle() {
+            let leaveTitle = GLOBAL_CONFIG.diytitle.leaveTitle;
+            let backTitle = GLOBAL_CONFIG.diytitle.backTitle;
+            let OriginTitile = document.title;
+            let titleTime;
+            
+            log("changeDocumentTitle 函数开始执行");
+            log("原始标题: " + OriginTitile);
+            log("离开标题: " + leaveTitle);
+            log("返回标题: " + backTitle);
+            
+            document.addEventListener("visibilitychange", function () {
+                log("visibilitychange 事件触发");
+                log("document.hidden: " + document.hidden);
+                
+                if (document.hidden) {
+                    // 离开当前页面时标签显示内容
+                    document.title = leaveTitle;
+                    log("页面隐藏，标题改为: " + leaveTitle);
+                    clearTimeout(titleTime);
+                } else {
+                    // 返回当前页面时标签显示内容
+                    document.title = backTitle + OriginTitile;
+                    log("页面显示，标题改为: " + backTitle + OriginTitile);
+                    // 两秒后变回正常标题
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitile;
+                        log("2秒后恢复标题为: " + OriginTitile);
+                    }, 2000);
+                }
+            });
+            
+            log("visibilitychange 事件监听器已添加");
+        }
+        
+        // 启用功能
+        if (GLOBAL_CONFIG.diytitle && GLOBAL_CONFIG.diytitle.enable) {
+            log("启用 diytitle 功能");
+            changeDocumentTitle();
+        } else {
+            log("diytitle 功能未启用");
+        }
+        
+        log("脚本执行完成，请切换标签页测试");
+    </script>
+</body>
+</html>

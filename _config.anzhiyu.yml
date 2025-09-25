@@ -958,7 +958,7 @@ note:
 
 icons:
   ali_iconfont_js: # 阿里图标symbol 引用链接，主题会进行加载 symbol 引用
-  fontawesome: false #是否启用fontawesome6图标
+  fontawesome: true #是否启用fontawesome6图标
   fontawesome_animation_css: #fontawesome_animation 如果有就会加载，示例值：https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
 
 # other
@@ -1055,7 +1055,7 @@ home_top:
       path: /categories/Tech/
       shadow: var(--anzhiyu-shadow-green)
       class: green
-      icon: anzhiyu-icon-code
+      icon: fas fa-laptop-code
   default_descr: 再怎么看我也不知道怎么描述它的啦！
   swiper:
     enable: enable

@@ -14,7 +14,7 @@
   margin-right: 0;
 }
 .categoryItem {
-  width: calc(100% / 3 - 0.33rem);
+  width: calc(100% / 4 - 0.375rem);
   height: 100%;
   margin-right: 0.5rem;
 }
@@ -70,6 +70,18 @@ a.categoryButton.red {
 }
 a.categoryButton.green {
   background: linear-gradient(to right, #18e7ae, #1eebeb);
+  background-size: 200%;
+}
+a.categoryButton.yellow {
+  background: linear-gradient(to right, #ffc93e, #ffeb3b);
+  background-size: 200%;
+}
+a.categoryButton.orange {
+  background: linear-gradient(to right, #ff8c00, #ff6b35);
+  background-size: 200%;
+}
+a.categoryButton.purple {
+  background: linear-gradient(to right, #9c27b0, #e91e63);
   background-size: 200%;
 }
 
