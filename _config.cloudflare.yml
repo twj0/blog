@@ -13,7 +13,7 @@ timezone: ''
 
 # URL - Cloudflare Pages specific configuration
 ## For Cloudflare Pages, the site is deployed at root domain
-url: https://twj0-blog.pages.dev
+url: https://blog-aw4.pages.dev
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
