@@ -21,3 +21,5 @@ themes/anzhiyu/_config.personal.yml
 *.bak
 
 source/test-diytitle-simple.html
+diagnose-deployment.js
+fix-hexo-plugins.js
