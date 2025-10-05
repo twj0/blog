@@ -1,9 +1,10 @@
-
+# !root/_config.anzhiyu.yml
+# 这个文件放在根目录下，优先级最高。是全局配置文件，会覆盖主题的配置文件。
 
 # nav相关配置
 nav:
   enable: true
-  travelling: true
+  travelling: false
   clock: true
   menu:
     - title: 网页
