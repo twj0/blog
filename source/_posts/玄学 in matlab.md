@@ -1,5 +1,5 @@
 ---
-title: matlab深度学习工具箱也是玄学吗？
+title: matlab深度学习真是玄学吗？
 date: 2025-10-05 22:22:54
 tags:
     - matlab
@@ -24,3 +24,7 @@ discrpetion: 为什么在学校和在家里跑出来的图形不一样呢？
 ---
 
 反正设计的1000个episode，希望明天早上起床可以看到好东西。
+
+---
+
+不够其实我已经跑出来了一些图形了，主要是电池在电网的表现(viz_Battery_Performance_Analysis_20251003_063134)[https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANuaOKDekgGx_7wycAE8l_1Wu9Bqo4AAiIOaxuYLRlX2-V7yTFiPMQBAAMCAAN3AAM2BA.png]，国庆节假期结束就要面见导师了，争取明天写出初稿。
