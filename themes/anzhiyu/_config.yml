@@ -2,9 +2,9 @@
 
 # nav相关配置
 nav:
-  enable: true
-  travelling: true
-  clock: true
+  enable: false # 是否开启导航栏
+  travelling: false
+  clock: false
   menu:
     - title: 网页
       item:
