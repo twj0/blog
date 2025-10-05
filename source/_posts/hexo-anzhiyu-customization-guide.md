@@ -14,6 +14,7 @@ description: 从零开始学习 Hexo AnZhiYu 主题的个性化配置，包括�
 ---
 
 # Hexo AnZhiYu 主题个性化配置完整指南 🎨
+by claude 4.0 sonnet
 
 本文将详细介绍如何对 Hexo AnZhiYu 主题进行个性化配置，包括解决常见问题和实现个性化功能。通过本教程，您将学会：
 
