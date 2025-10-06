@@ -23,3 +23,5 @@ themes/anzhiyu/_config.personal.yml
 source/test-diytitle-simple.html
 diagnose-deployment.js
 fix-hexo-plugins.js
+
+themes/anzhiyu/.augment/rules/rule2.md
