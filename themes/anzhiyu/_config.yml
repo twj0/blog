@@ -1,4 +1,5 @@
-# !root/themes/anzhiyu/_config.yml
+# !root/_config.anzhiyu.yml
+# 这个文件放在根目录下，优先级最高。是全局配置文件，会覆盖主题的配置文件。
 
 # nav相关配置
 nav:
@@ -413,6 +414,7 @@ crisp:
   enable: false
   website_id:
 
+# 底部设置
 # Footer Settings
 # --------------------------------------
 footer:
@@ -525,14 +527,18 @@ footer:
       #   text: 图床
       # - link: https://beian.miit.gov.cn/
       #   text: 湘ICP备-xxxxxxx号
+
     subTitle:
-      enable: false
+      enable: true
       # Typewriter Effect (打字效果)
       effect: true
       # Effect Speed Options (打字效果速度参数)
       startDelay: 300 # time before typing starts in milliseconds
       typeSpeed: 150 # type speed in milliseconds
       backSpeed: 50 # backspacing speed in milliseconds
+      
+      # 循环打字效果
+      # 底部的打字效果是否循环播放
       # loop (循环打字)
       loop: true
       # source 调用第三方服务
@@ -542,8 +548,13 @@ footer:
       # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
       # subtitle 会先显示 source , 再显示 sub 的内容
       source: 1
+
+      
       # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
       sub:
+        - Welcome to my blog
+        - Record learning and life
+        - Share growth and happiness
         # - 生活明朗&#44; 万物可爱&#44; 人间值得&#44; 未来可期.
 
 # Analysis
@@ -634,11 +645,10 @@ sidebar:
   nav_menu_project: true
 
 # 文章h2添加分隔线
-h2Divider: false
+h2Divider: true
 
 # 表格隔行变色
-table_interlaced_discoloration: false
-
+table_interlaced_discoloration: true
 # 首页双栏显示
 article_double_row: true
 
@@ -715,8 +725,13 @@ ClickShowText:
     # - I
     # - LOVE
     # - YOU
+    - HAPPY
+    - HELLO
+    - WORLD
+    - THANK
+    - YOU
   fontSize: 15px
-  random: false
+  random: true
   mobile: false
 
 # Default display mode (网站默认的显示模式)
@@ -752,7 +767,7 @@ hr_icon:
 
 # the subtitle on homepage (主页subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # Effect Speed Options (打字效果速度参数)
