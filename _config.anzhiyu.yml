@@ -9,15 +9,23 @@ nav:
   menu:
     - title: 网页
       item:
-        - name: 博客
-          link: https://hexo.anheyu.com/
-          icon: /img/favicon.ico
+        - name: github
+          link: https://github.com
+          icon: https://github.githubassets.com/favicons/favicon.svg
+
+        - name: bilibili
+          link: https://www.bilibili.com/
+          icon: https://www.bilibili.com/favicon.ico
+        
+        - name: linuxdo
+          link: https://linux.do
+          icon: https://linux.do/favicon/proxied?https%3A%2F%2Flinux.do%2Fuploads%2Fdefault%2Foptimized%2F4X%2Fc%2Fc%2Fd%2Fccd8c210609d498cbeb3d5201d4c259348447562_2_32x32.png
+
     - title: 项目
       item:
-        - name: 安知鱼图床
-          link: https://image.anheyu.com/
-          icon: https://image.anheyu.com/favicon.ico
-
+        - name: telegraph图床
+          link: https://telegraph.ttwwjj.ddns-ip.net/
+          icon: https://raw.githubusercontent.com/cf-pages/Telegraph-Image/refs/heads/main/favicon.ico
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
 # 注意： 仅网站首页变灰，其他页面正常显示
 mourn:
@@ -121,9 +129,11 @@ katex:
 favicon: /favicon.ico
 
 # Avatar (头像)
+# 文章底部的作者头像和侧边矩形的博主头像
+
 avatar:
   enable: true
-  img: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANlaNOdRhSnWBsd4NUx7aVvqRD0SkAAAoLJMRtDfqBW986VsBBwTgUBAAMCAAN3AAM2BA.png
+  img: https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAN3aONPqhmO2VWLcPQvAAFSzSLekjLQAAJXGwACmC0hV_QgN1uJA2-cNgQ.ico
   effect: false # 头像特效
 
 # Disable all banner image
