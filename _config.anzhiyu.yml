@@ -527,7 +527,7 @@ footer:
       #   text: 图床
       # - link: https://beian.miit.gov.cn/
       #   text: 湘ICP备-xxxxxxx号
-    # 底部打字的效果
+
     subTitle:
       enable: true
       # Typewriter Effect (打字效果)
