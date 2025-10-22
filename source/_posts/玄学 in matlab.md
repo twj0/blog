@@ -33,3 +33,7 @@ discrpetion: 为什么在学校和在家里跑出来的图形不一样呢？
 ![viz_Battery_Performance_Analysis_20251003_063134](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANuaOKDekgGx_7wycAE8l_1Wu9Bqo4AAiIOaxuYLRlX2-V7yTFiPMQBAAMCAAN3AAM2BA.png)
 
 国庆节假期结束就要面见导师了，争取明天写出初稿。
+
+---
+
+没想到二十多天过去了还是缓慢前进。不过也快了，吗？(雾
