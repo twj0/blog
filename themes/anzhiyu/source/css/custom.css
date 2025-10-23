@@ -1,0 +1,37 @@
+/* 全局背景设置 */
+body {
+  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png'); /* 使用图床链接作为背景图片 */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#web_bg {
+  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png') !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* 毛玻璃效果 */
+#page,
+#nav,
+#aside-content .card-widget,
+#post-content,
+.recent-post-item,
+#footer {
+  backdrop-filter: blur(10px); /* 毛玻璃效果，值越大越模糊 */
+  background: rgba(255, 255, 255, 0.7); /* 白色半透明背景 */
+}
+
+/* 深色模式的毛玻璃效果 */
+[data-theme="dark"] #page,
+[data-theme="dark"] #nav,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #post-content,
+[data-theme="dark"] .recent-post-item,
+[data-theme="dark"] #footer {
+  background: rgba(0, 0, 0, 0.7); /* 黑色半透明背景 */
+}
