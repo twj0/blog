@@ -21,9 +21,15 @@ nav:
           link: https://linux.do
           icon: https://linux.do/favicon/proxied?https%3A%2F%2Flinux.do%2Fuploads%2Fdefault%2Foptimized%2F4X%2Fc%2Fc%2Fd%2Fccd8c210609d498cbeb3d5201d4c259348447562_2_32x32.png
 
+        - name: nodelnc
+          link: https://nodelnc.com/
+          icon: https://s.rmimg.com/original/2X/a/a4f25429f7ad6bdc67647367a0e9fa033d0b980d.svg
+
+        - name: nodeseek
         - name: nodeseek
           link: https://nodeseek.com/
           icon: https://www.nodeseek.com/static/image/favicon/android-chrome-192x192.png
+          
     - title: 项目
       item:
         - name: telegraph图床
@@ -1148,10 +1154,10 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 8152976493
+  id: 14396439758
   server: netease
   volume: 0.7 # 默认音量
-  all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+  all_playlist: https://music.163.com/#/playlist?id=14396439758
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music
@@ -1167,7 +1173,7 @@ ptool:
   share_mobile: true
   share_weibo: true
   share_copyurl: true
-  categories: false # 是否显示分类
+  categories: true # 是否显示分类
   mode: # 运营模式与责任，不配置不显示
 
 # 欢迎语配置
@@ -1239,7 +1245,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
@@ -1249,8 +1255,8 @@ peoplecanvas:
 # 动效
 dynamicEffect:
   postTopWave: true # 文章顶部波浪效果
-  postTopRollZoomInfo: false # 文章顶部滚动时缩放
-  pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
+  postTopRollZoomInfo: true # 文章顶部滚动时缩放
+  pageCommentsRollZoom: true # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
