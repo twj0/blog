@@ -1,10 +1,10 @@
 /* 全局背景设置 */
 body {
-  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png') center / cover no-repeat fixed !important; /* 使用图床链接作为背景图片 */
+  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') center / cover no-repeat fixed !important; /* 使用图床链接作为背景图片 */
 }
 
 #web_bg {
-  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png') center / cover no-repeat fixed !important;
+  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') center / cover no-repeat fixed !important;
 }
 
 /* 毛玻璃效果 */
@@ -14,7 +14,7 @@ body {
 #post-content,
 .recent-post-item,
 #footer {
-  backdrop-filter: blur(10px); /* 毛玻璃效果，值越大越模糊 */
+  backdrop-filter: blur(12px); /* 毛玻璃效果，值越大越模糊 */
   background: rgba(255, 255, 255, 0.7); /* 白色半透明背景 */
 }
 
