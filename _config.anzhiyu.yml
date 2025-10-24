@@ -25,7 +25,10 @@ nav:
           link: https://nodelnc.com/
           icon: https://s.rmimg.com/original/2X/a/a4f25429f7ad6bdc67647367a0e9fa033d0b980d.svg
 
-        - name: nodeseek
+        - name: idcflare
+          link: https://idcflare.com/
+          icon: https://idcflare.com/uploads/default/original/1X/a0dbb54665cc3e8e18fd6cf1e7a8e43049d8b330.png
+        
         - name: nodeseek
           link: https://nodeseek.com/
           icon: https://www.nodeseek.com/static/image/favicon/android-chrome-192x192.png
