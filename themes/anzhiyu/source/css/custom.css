@@ -1,6 +1,6 @@
 /* 全局背景设置 */
 body {
-  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png'); /* 使用图床链接作为背景图片 */
+  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') !important; /* 使用图床链接作为背景图片 */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -8,7 +8,7 @@ body {
 }
 
 #web_bg {
-  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANVaMwTNLJiH8RkF7hqUzpx5NqqDLsAAgjIMRusgWBWoK9lG9B85c0BAAMCAAN5AAM2BA.png') !important;
+  background-image: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') !important;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
