@@ -25,3 +25,5 @@ diagnose-deployment.js
 fix-hexo-plugins.js
 
 themes/anzhiyu/.augment/rules/rule2.md
+test-giscus.html
+docs/giscus-setup-guide.md

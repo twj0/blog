@@ -1,4 +1,4 @@
-- const { repo, repo_id, category_id, theme:themes, option } = theme.giscus
+- const { repo, repo_id, category, category_id, theme:themes, option } = theme.giscus
 - const giscusUrl = 'https://giscus.app/client.js'
 - const giscusOriginUrl = new URL(giscusUrl).origin
 - const { use, lazyload } = theme.comments
@@ -14,6 +14,7 @@ script.
         src: '!{giscusUrl}',
         'data-repo': '!{repo}',
         'data-repo-id': '!{repo_id}',
+        'data-category': '!{category}',
         'data-category-id': '!{category_id}',
         'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
         'data-reactions-enabled': '1',

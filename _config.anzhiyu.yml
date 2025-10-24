@@ -379,11 +379,12 @@ artalk:
 
 # giscus
 # https://giscus.app/
+
 giscus:
-  repo: twj0/giscus
-  repo_id: R_kgDOQH1S2g
-  category: Announcements
-  category_id: DIC_kwDOQH1S2s4Cw-gT
+  repo: ttwwjj1/test-giscus
+  repo_id: R_kgDOQISDhQ
+  category: General
+  category_id: DIC_kwDOQISDhc4CxAca
   theme:
     light: light
     dark: dark
@@ -395,6 +396,7 @@ giscus:
     data-input-position: top
     data-lang: zh-CN
     data-loading: lazy
+    data-category: General
 
 # Chat Services
 # --------------------------------------
