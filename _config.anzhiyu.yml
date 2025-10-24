@@ -10,16 +10,16 @@ nav:
     - title: 导航站
       item:
          - name: twj0/nav
-         - link: https://twj0.github.io/nav
-         - icon: https://gcore.jsdelivr.net/gh/xjh22222228/public@gh-pages/nav/logo.svg
+           link: https://twj0.github.io/nav
+           icon: https://gcore.jsdelivr.net/gh/xjh22222228/public@gh-pages/nav/logo.svg
 
          - name: eooce nav
-         - link: https://nav.eooce.com/
-         - icon: https://img.icons8.com/lollipop/100/navigation.png
+           link: https://nav.eooce.com/
+           icon: https://img.icons8.com/lollipop/100/navigation.png
 
          - name: toolify.ai
-         - link: https://www.toolify.ai/zh/
-         - icon: https://www.toolify.ai/3.3.2/img/logo.f3a91ce.png
+           link: https://www.toolify.ai/zh/
+           icon: https://www.toolify.ai/3.3.2/img/logo.f3a91ce.png
 
 
     - title: 网页
