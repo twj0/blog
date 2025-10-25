@@ -53,6 +53,12 @@ nav:
          - name: toolify.ai
            link: https://www.toolify.ai/zh/
            icon: https://www.toolify.ai/3.3.2/img/logo.f3a91ce.png
+
+    - title: 域名
+      item:
+        - name: domain.digitalplat.org
+          link: https://domain.digitalplat.org/
+          icon: https://domain.digitalplat.org/wp-content/uploads/2025/05/logo.jpg
 # mourn （哀悼日，指定日期网站简单变灰，不包括滚动条）
 # 注意： 仅网站首页变灰，其他页面正常显示
 mourn:
