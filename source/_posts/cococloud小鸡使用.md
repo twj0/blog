@@ -65,7 +65,7 @@ description: 详细图文教程：使用Cococloud小鸡搭建自己的节点，�
 
 点击进入你的小鸡详情页面，先进行系统重装并设置密码：
 
-![重装系统](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAASh8_eAAOKaPyALgEMiqqkGivYNueRNRQ6SPYAAs8LaxtaGelXd_k9gpKwUuEBAAMCAAN5AAM2BA.png)
+![重装系统](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAAOKaPyALgEMiqqkGivYNueRNRQ6SPYAAs8LaxtaGelXd_k9gpKwUuEBAAMCAAN5AAM2BA.png)
 
 设置一个强密码，建议包含大小写字母、数字和特殊字符：
 
