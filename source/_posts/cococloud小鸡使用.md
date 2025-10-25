@@ -20,6 +20,14 @@ description: 详细图文教程：使用Cococloud小鸡搭建自己的节点，�
 
 > ⚠️ 注意：本教程仅用于学习和技术研究，请遵守相关法律法规，不要用于非法用途。
 
+*结果就是，使用老王的脚本，只有vless是通的，但是也不想管那么多了，能用就行*
+![V2rayN](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAAOOaPyF2qzydm7IiBfr7Jv7fqbR6nYAAt0LaxtaGelXcFxKlcZohQUBAAMCAAN3AAM2BA.png)
+
+相关测评可以参考
+![ipdata](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAAOPaPyHDPbU7xqTnUy-3GwBhsCh2ZsAAt8LaxtaGelX9KwuUQgOfpYBAAMCAAN4AAM2BA.png)
+
+[nodeloc](https://www.nodeloc.com/t/topic/64985)
+
 ## 📘 教程目录
 
 1. [购买和初始化小鸡](#购买和初始化小鸡)
