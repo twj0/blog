@@ -10,7 +10,7 @@ tag:
 
 categories:
   - Tech
-
+cover: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAAOVaQMP3ybMUDgK0mkpEjQIX2JPkPIAApwLaxtcBRlULdrzzFgB4_kBAAMCAAN5AAM2BA.png
 description: matlab2025b移除了对sps的支持，电气专业的最好还是不要更新
 
 ---
