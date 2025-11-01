@@ -14,7 +14,7 @@ description: 以 gemini-balance 项目为例，手把手带你走过从零开始
 
 # Docker 操作实战：以部署 gemini-balance 为例
 
-
+author: Gemini-2.5-pro
 
 你好，未来的 Docker 大师！
 
