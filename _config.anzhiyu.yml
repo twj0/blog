@@ -18,6 +18,10 @@ nav:
           link: https://www.bilibili.com/
           icon: https://www.bilibili.com/favicon.ico
         
+        - name: fofa
+          link: https://fofa.info/
+          icon: https://fofa.info/favicon.ico
+        
         - name: linuxdo
           link: https://linux.do
           icon: https://linux.do/favicon/proxied?https%3A%2F%2Flinux.do%2Fuploads%2Fdefault%2Foptimized%2F4X%2Fc%2Fc%2Fd%2Fccd8c210609d498cbeb3d5201d4c259348447562_2_32x32.png
