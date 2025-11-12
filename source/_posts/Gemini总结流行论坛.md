@@ -8,7 +8,7 @@ tags:
   - 技术交流
   - 开发者资源
 categories:
-  - 技术分享
+  - Share
 
 cover: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAAOUaQIJsde8s61dVfP18Efdw8t3-XYAAk8LaxtcBRFUzfXVu02FWP8BAAMCAAN5AAM2BA.png
 description: Gemini总结全球技术论坛全景指南，深度解析主流开发者社区生态，为技术学习者提供专业社区资源推荐。
