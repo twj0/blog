@@ -10,6 +10,8 @@ tags:
   - Linux
   - DISPLAY
   - 桌面
+
+cover: https://bflameswift.github.io/2022/07/22/Introduction/wsl2-visualization/image-20220722202954549.png
 description: 在 WSL2 上以轻量方式体验 LXQt 桌面，系统性解决 cannot open display 与 DISPLAY 变量配置问题，保留完整安装、启动与排错流程。
 ---
 
