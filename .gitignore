@@ -19,7 +19,7 @@ themes/anzhiyu/_config.personal.yml
 # Backup files
 *.backup
 *.bak
-
+.trae
 source/test-diytitle-simple.html
 diagnose-deployment.js
 fix-hexo-plugins.js
