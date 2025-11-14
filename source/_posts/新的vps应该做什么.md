@@ -1267,7 +1267,7 @@ docker inspect portainer
 
 可以使用 --format 标志来只提取IP地址，这样更清晰。
 
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' portainer
+docker inspect -f '{% raw %}{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}{% endraw %}' portainer
 
 这样就获取到了容器的内部IP了，于是我们可以在NPM中对IP进行代理，我们使用portainer.domain.com来访问页面，Scheme使用http，IP输入刚刚获取的容器IP比如172.18.0.3，端口输入9000。SSL选择刚刚的证书*.domain.com，选择Force SSL进行强制SSL访问然后保存。这样就可以通过域名来访问Portainer后台了。
 
