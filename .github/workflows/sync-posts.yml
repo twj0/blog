@@ -1,0 +1,91 @@
+# .github/workflows/sync-posts.yml
+
+name: Sync Blog Posts to Secondary Repo
+
+# 触发条件：当 source/_posts 目录下的 .md 文件有 push 时
+on:
+  push:
+    branches:
+      - main # 假设你的主分支是 main
+    paths:
+      - 'source/_posts/*.md'
+
+# 允许手动触发，方便调试
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允许检出代码
+
+    steps:
+      # 1. 检出主仓库代码
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整的提交历史，以便获取提交信息
+
+      # 2. 设置 SSH，用于访问小号仓库
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SYNC_SSH_PRIVATE_KEY }} # 引用我们刚刚创建的 Secret
+
+      # 3. 执行同步逻辑
+      - name: Sync posts to destination repository
+        run: |
+          # --- 请在这里修改你的配置 ---
+          # 小号仓库的 SSH 地址 (git@github.com:用户名/仓库名.git)
+          DEST_REPO="git@github.com:twj011/blog.git"
+          # 小号仓库的目标分支
+          DEST_BRANCH="main"
+          # 小号仓库中存放文章的目录 (如果放在根目录，则为 "")
+          DEST_DIR="source/_posts" 
+          # -----------------------------
+
+          # 源目录路径
+          SOURCE_DIR="${GITHUB_WORKSPACE}/source/_posts"
+
+          # 临时目录用于克隆小号仓库
+          TEMP_DIR="/tmp/dest-repo"
+
+          echo "Syncing from ${SOURCE_DIR} to ${DEST_REPO}:${DEST_DIR}"
+
+          # 克隆小号仓库
+          git clone --branch "${DEST_BRANCH}" "${DEST_REPO}" "${TEMP_DIR}"
+
+          # 进入小号仓库目录
+          cd "${TEMP_DIR}"
+
+          # 如果目标目录不存在，则创建它
+          if [ ! -d "${DEST_DIR}" ]; then
+            mkdir -p "${DEST_DIR}"
+          fi
+
+          # 使用 rsync 同步文件
+          # -a: 归档模式，保持文件属性
+          # -v: 显示详细信息
+          # --delete: 删除目标目录中源目录没有的文件，保持镜像同步
+          rsync -av --delete "${SOURCE_DIR}/" "./${DEST_DIR}/"
+
+          # 检查是否有文件变更
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected, preparing to commit..."
+            
+            # 配置 Git 用户信息
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            # 添加所有变更
+            git add .
+
+            # 提交变更，并引用主仓库的提交哈希
+            git commit -m "chore: auto-sync from main repo @ ${GITHUB_SHA}"
+
+            # 推送到小号仓库
+            git push origin "${DEST_BRANCH}"
+            echo "Sync and push completed successfully."
+          else
+            echo "No changes to sync."
+          fi

@@ -109,7 +109,22 @@ author_status:
     # - 🏃 脚踏实地行动派
     # - 🧱 团队小组发动机
     # - 💢 壮汉人狠话不多
-    - TGW Group
+    - 可以点击
+    - 没骗你吧
+    - 再点击试试呢
+    - 听说有彩蛋 🎉
+    - 彩蛋留给有耐心的人
+    - 最后一次点击了
+    - 真的没有了
+    - 恭喜你，你已触发彩蛋
+    - 我就是彩蛋 🤣
+    - 怎么还在点
+    - 那就
+    - T ~
+    - G ~
+    - W ~ 
+    - Group 👐 ~~~
+    - 恭喜你，你已触发彩蛋 🎉
     
 
 # search (搜索)
@@ -858,7 +873,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: welcome
+    description: 寄蜉蝣于天地，渺沧海之一粟。光阴不负赶路人，待到回首向来时，笑谈浮生若梦，无悔鲜衣怒马
     name_link: /
 
   card_announcement:
