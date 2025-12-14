@@ -134,7 +134,7 @@ sudo apt update && sudo apt upgrade -y
 cd /mnt/d/Downloads
 ```
 
-**在Windows打开Linux文件夹**：在Ubuntu当前目录下输入：
+**打开Windows文件夹**：在Ubuntu当前目录下输入：
 ```bash
 explorer.exe .
 ```
