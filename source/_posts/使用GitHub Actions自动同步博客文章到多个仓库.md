@@ -7,9 +7,9 @@ tags:
   - 博客管理
   - Git
   - SSH
+  - 自动化运维
 categories:
   - Tech
-  - 自动化运维
 cover: https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800
 description: 详细介绍如何使用 GitHub Actions 实现博客文章自动同步到多个仓库，包括 SSH 密钥配置、工作流编写和完整实现步骤
 author: glm4.6
