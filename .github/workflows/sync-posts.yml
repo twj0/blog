@@ -1,91 +1,110 @@
-# .github/workflows/sync-posts.yml
+# .github/workflows/sync-posts-matrix.yml
 
-name: Sync Blog Posts to Secondary Repo
+name: Sync Blog Posts to Multiple Repos (Matrix)
 
 # 触发条件：当 source/_posts 目录下的 .md 文件有 push 时
 on:
   push:
     branches:
-      - main # 假设你的主分支是 main
+      - main
     paths:
       - 'source/_posts/*.md'
-
-# 允许手动触发，方便调试
+  # 允许手动触发
   workflow_dispatch:
 
 jobs:
-  sync:
+  sync-matrix:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 允许检出代码
+      contents: read # 读取主仓库只需要 read 权限
+
+    # --- 核心：矩阵配置 ---
+    strategy:
+      # 如果一个仓库同步失败，不要取消其他仓库的任务
+      fail-fast: false
+      matrix:
+        # 在这里配置你的所有小号仓库列表
+        target_repo:
+          - git@github.com:twj011/blog.git            # 原有的
+          - git@github.com:twj011/blog-butterfly.git  # 新添加的
 
     steps:
       # 1. 检出主仓库代码
       - name: Checkout source repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取完整的提交历史，以便获取提交信息
+          fetch-depth: 0
 
-      # 2. 设置 SSH，用于访问小号仓库
+      # 2. 设置 SSH
+      # 注意：所有小号仓库的 Settings -> Deploy keys 必须添加同一个公钥
+      # 而这里引用的 secrets.SYNC_SSH_PRIVATE_KEY 是对应的同一个私钥
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.SYNC_SSH_PRIVATE_KEY }} # 引用我们刚刚创建的 Secret
+          ssh-private-key: ${{ secrets.SYNC_SSH_PRIVATE_KEY }}
 
-      # 3. 执行同步逻辑
-      - name: Sync posts to destination repository
+      # 3. 执行同步逻辑（针对矩阵中的当前仓库）
+      - name: Sync to ${{ matrix.target_repo }}
         run: |
-          # --- 请在这里修改你的配置 ---
-          # 小号仓库的 SSH 地址 (git@github.com:用户名/仓库名.git)
-          DEST_REPO="git@github.com:twj011/blog.git"
-          # 小号仓库的目标分支
+          # --- 配置 ---
+          # 动态从 matrix 获取当前任务的目标仓库
+          DEST_REPO="${{ matrix.target_repo }}"
+          
+          # 目标分支 (假设所有小号都叫 main，如果不一样需要另行处理)
           DEST_BRANCH="main"
-          # 小号仓库中存放文章的目录 (如果放在根目录，则为 "")
-          DEST_DIR="source/_posts" 
+          
+          # 目标目录
+          DEST_DIR="source/_posts"
           # -----------------------------
 
-          # 源目录路径
           SOURCE_DIR="${GITHUB_WORKSPACE}/source/_posts"
+          
+          # 使用哈希生成唯一的临时目录名，虽然 Matrix 是隔离环境，但这是一个好习惯
+          TEMP_DIR="/tmp/sync-repo-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
-          # 临时目录用于克隆小号仓库
-          TEMP_DIR="/tmp/dest-repo"
+          echo "============================================="
+          echo "Syncing from Main Repo to: ${DEST_REPO}"
+          echo "============================================="
 
-          echo "Syncing from ${SOURCE_DIR} to ${DEST_REPO}:${DEST_DIR}"
+          # 1. 克隆小号仓库
+          echo "Cloning destination repository..."
+          git clone --branch "${DEST_BRANCH}" "${DEST_REPO}" "${TEMP_DIR}" --depth 1
 
-          # 克隆小号仓库
-          git clone --branch "${DEST_BRANCH}" "${DEST_REPO}" "${TEMP_DIR}"
-
-          # 进入小号仓库目录
+          # 2. 进入小号仓库目录
           cd "${TEMP_DIR}"
 
-          # 如果目标目录不存在，则创建它
+          # 3. 确保目标目录存在
           if [ ! -d "${DEST_DIR}" ]; then
+            echo "Destination directory not found, creating..."
             mkdir -p "${DEST_DIR}"
           fi
 
-          # 使用 rsync 同步文件
-          # -a: 归档模式，保持文件属性
-          # -v: 显示详细信息
-          # --delete: 删除目标目录中源目录没有的文件，保持镜像同步
-          rsync -av --delete "${SOURCE_DIR}/" "./${DEST_DIR}/"
+          # 4. 使用 rsync 同步文件
+          # -a: 归档模式
+          # -v: 详细输出
+          # --delete: 镜像同步（删除小号里有但大号里没有的文件）
+          # --exclude: 排除 .git 目录防止破坏仓库结构
+          echo "Running rsync..."
+          rsync -av --delete --exclude ".git" "${SOURCE_DIR}/" "./${DEST_DIR}/"
 
-          # 检查是否有文件变更
+          # 5. 检查 Git 状态并推送
           if [ -n "$(git status --porcelain)" ]; then
             echo "Changes detected, preparing to commit..."
             
-            # 配置 Git 用户信息
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
 
-            # 添加所有变更
             git add .
+            git commit -m "chore: sync posts from main repo @ ${GITHUB_SHA::7}"
 
-            # 提交变更，并引用主仓库的提交哈希
-            git commit -m "chore: auto-sync from main repo @ ${GITHUB_SHA}"
-
-            # 推送到小号仓库
+            echo "Pushing changes..."
             git push origin "${DEST_BRANCH}"
-            echo "Sync and push completed successfully."
+            
+            echo "✅ Successfully synced to ${DEST_REPO}"
           else
-            echo "No changes to sync."
+            echo "⚡ No changes detected. Skipping push."
           fi
+
+          # 清理临时目录
+          cd "${GITHUB_WORKSPACE}"
+          rm -rf "${TEMP_DIR}"
