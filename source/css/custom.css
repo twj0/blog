@@ -1,29 +1,42 @@
 /* 全局背景设置 */
-body {
-  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') center / cover no-repeat fixed !important; /* 使用图床链接作为背景图片 */
+:root {
+  /* 图床链接 你的自定义背景图片 */
+  --anzhiyu-wallpaper: none; /* 使用图床链接作为背景图片 */
 }
 
-#web_bg {
-  background: url('https://telegraph.ttwwjj.ddns-ip.net/file/BQACAgUAAyEGAAShY8_eAAOFaPrVYWm8uJKuUwODR2yAw59P8xkAAqsUAALZbtlXLFRe9c_T8YQ2BA.png') center / cover no-repeat fixed !important;
+html.anzhiyu-wallpaper-enabled body {
+  background-image: var(--anzhiyu-wallpaper) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+html.anzhiyu-wallpaper-enabled #web_bg {
+  background-image: var(--anzhiyu-wallpaper) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 /* 毛玻璃效果 */
-#page,
-#nav,
-#aside-content .card-widget,
-#post-content,
-.recent-post-item,
-#footer {
+html.anzhiyu-wallpaper-enabled #page,
+html.anzhiyu-wallpaper-enabled #nav,
+html.anzhiyu-wallpaper-enabled #aside-content .card-widget,
+html.anzhiyu-wallpaper-enabled #post-content,
+html.anzhiyu-wallpaper-enabled .recent-post-item,
+html.anzhiyu-wallpaper-enabled #footer {
   backdrop-filter: blur(10px); /* 毛玻璃效果，值越大越模糊 */
   background: rgba(255, 255, 255, 0.7); /* 白色半透明背景 */
 }
 
 /* 深色模式的毛玻璃效果 */
-[data-theme="dark"] #page,
-[data-theme="dark"] #nav,
-[data-theme="dark"] #aside-content .card-widget,
-[data-theme="dark"] #post-content,
-[data-theme="dark"] .recent-post-item,
-[data-theme="dark"] #footer {
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] #page,
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] #nav,
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] #aside-content .card-widget,
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] #post-content,
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] .recent-post-item,
+html.anzhiyu-wallpaper-enabled[data-theme="dark"] #footer {
   background: rgba(0, 0, 0, 0.7); /* 黑色半透明背景 */
 }

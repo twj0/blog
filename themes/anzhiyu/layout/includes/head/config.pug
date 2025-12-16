@@ -166,6 +166,11 @@
     music_page_default = JSON.stringify(theme.music_page_default)
   }
 
+  let wallpaper = 'undefined'
+  if (theme.wallpaper && theme.wallpaper.enable) {
+    wallpaper = JSON.stringify(theme.wallpaper)
+  }
+
 script.
   const GLOBAL_CONFIG = {
     linkPageTop: !{linkPageTop},
@@ -221,3 +226,5 @@ script.
     shortcutKey: !{shortcutKey},
     autoDarkmode: !{theme.darkmode.enable && theme.darkmode.autoChangeMode === 1}
   }
+
+  window.anzhiyuWallpaperConfig = !{wallpaper}
