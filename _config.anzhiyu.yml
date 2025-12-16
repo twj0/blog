@@ -1334,7 +1334,7 @@ wallpaper:
   # - loliapi: https://www.loliapi.com/acg/ (random ACG wallpaper)
   # - bing: Bing-Wallpaper-Action API (default: https://api.xsot.cn/bing)
   # - customList: pick from your `customList`
-  provider: xjh
+  provider: bing
 
   # If you want a fixed wallpaper (recommended for non-coders), set `customUrl`.
   # When `customUrl` is set, it will override `provider/mode`.
