@@ -9,7 +9,7 @@ tags:
   - 自动化
   - AutoGLM
 categories:
-  - 技术教程
+  - Tech
 cover: https://ghfast.top/https://raw.githubusercontent.com/zai-org/Open-AutoGLM/refs/heads/main/resources/logo.svg
 description: 本文详细介绍如何在Android手机上通过Termux部署AutoGLM智能体，实现手机自动化操作，让您的手机拥有强大的AI助手能力。
 
@@ -17,12 +17,15 @@ description: 本文详细介绍如何在Android手机上通过Termux部署AutoGL
 
 # 手机AI助手指南：AutoGLM在Android上的部署与使用
 
+~~作者: glm4.6~~
+
 > 随着人工智能技术的快速发展，将AI能力集成到日常使用的手机中已成为可能。本文将为您详细介绍如何在Android手机上部署AutoGLM智能体，实现手机自动化操作，让您的手机拥有强大的AI助手能力。
 
 ## 前言
 
 AutoGLM是一个开源的智能体框架，能够通过自然语言指令控制手机进行各种操作。通过在Android手机上部署**AutoGLM-TERMUX**（一个专门适配Android Termux环境的AutoGLM版本），您可以实现语音或文字控制手机应用、自动化日常任务、智能信息查询等功能。本文将带领您完成从环境准备到实际使用的完整部署过程。
 > **注意**：AutoGLM-TERMUX是一个第三方适配项目，它将原本在电脑上运行的Open-AutoGLM项目适配到Android Termux环境中。它通过修改依赖项和配置，使AutoGLM能够在Android设备上运行，无需连接电脑。
+> 原作者仓库:`https://github.com/eraycc/AutoGLM-TERMUX`
 
 ---
 
