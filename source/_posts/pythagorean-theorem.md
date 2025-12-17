@@ -9,6 +9,7 @@ categories:
   - Topic
 cover: https://images.unsplash.com/photo-1754304342299-c965654d4191?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 description: 详细介绍勾股定理的内容以及几种经典的证明方法，包括几何证明和代数证明
+mathjax: true
 
 ---
 

@@ -8,8 +8,10 @@ tags:
   - 科普
 categories:
   - Topic
-cover: https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+cover: https://images.unsplash.com/photo-1663669066662-1c696543b852?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==
 description: 从经典几何的勾股定理出发，推导四维时空中的广义勾股定理，揭示相对论时空观的数学本质
+katex: true
+mathjax: true
 
 ---
 

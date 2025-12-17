@@ -156,23 +156,23 @@ local_search:
   preload: true
   CDN:
 
-# Math (数学)
+# Math (数学公式渲染配置)
 # --------------------------------------
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page (true 表示每一页都加载js)
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 需要时加载，须在使用的 Markdown Front-matter 加上 mathjax: true)
+# 关于 per_page 配置的说明：
+# 如果设置为 true，将在每个页面加载 mathjax/katex 脚本（全局渲染，适合数学公式较多的博客）
+# 如果设置为 false，将根据页面设置加载（需要在文章 Front Matter 中添加 'mathjax: true' 或 'katex: true'）
+# 推荐设置为 false，按需加载以提高页面加载速度，除非你的博客大部分文章都包含数学公式
 
-# MathJax
+# MathJax 配置（功能强大但加载较慢）
 mathjax:
-  enable: false
-  per_page: false
+  enable: true  # 是否启用 MathJax 数学公式渲染器
+  per_page: false  # 是否在所有页面加载 MathJax 脚本
 
-# KaTeX
+# KaTeX 配置（速度快，功能相对 MathJax 较少但足够日常使用）
 katex:
-  enable: false
-  per_page: false
-  hide_scrollbar: true
+  enable: false  # 是否启用 KaTeX 数学公式渲染器（推荐）
+  per_page: false  # 是否在所有页面加载 KaTeX 脚本
+  hide_scrollbar: false  # 是否隐藏公式渲染时的滚动条，使页面更美观
 
 # Image (图片设置)
 # --------------------------------------
