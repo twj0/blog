@@ -1,5 +1,5 @@
 ---
-title: 使用SAC(matlab+simulink)强化学习，遇到很神奇的事情
+title: 使用SAC(matlab+simulink)深度强化学习，遇到很神奇的事情
 date: 2025-10-22 21:58:35
 tags:
   - 强化学习
