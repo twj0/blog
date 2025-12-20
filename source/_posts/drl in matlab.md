@@ -1,5 +1,5 @@
 ---
-title: matlab深度学习真是玄学吗？
+title: matlab深度学习何意味？
 date: 2025-10-05 22:22:54
 tags:
     - matlab
@@ -8,7 +8,7 @@ tags:
     - microgrid
 categories:
     - Topic
-cover: https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANraOJ_8u8WssgJm9YW5WW_CYW-GX8AAhEOaxuYLRlXdB2wJ4tyrc4BAAMCAAN4AAM2BA.png
+cover: https://ww2.mathworks.cn/help/examples/rl/win64/TrainDQNAgentForLKAUsingParallelComputingExample_03.png
 discrpetion: 为什么在学校和在家里跑出来的图形不一样呢？
 
 ---
@@ -29,11 +29,13 @@ discrpetion: 为什么在学校和在家里跑出来的图形不一样呢？
 
 ---
 
-不够其实我已经跑出来了一些图形了，主要是电池在电网的表现 (viz_Battery_Performance_Analysis_20251003_063134)
+不够其实我已经跑出来了一些图形了，是电池在电网的表现 (viz_Battery_Performance_Analysis_20251003_063134)
 ![viz_Battery_Performance_Analysis_20251003_063134](https://telegraph.ttwwjj.ddns-ip.net/file/AgACAgUAAyEGAAShY8_eAANuaOKDekgGx_7wycAE8l_1Wu9Bqo4AAiIOaxuYLRlX2-V7yTFiPMQBAAMCAAN3AAM2BA.png)
 
-国庆节假期结束就要面见导师了，争取明天写出初稿。
+~~国庆节假期结束就要面见导师了，争取明天写出初稿。~~
 
 ---
 
-没想到二十多天过去了还是缓慢前进。不过也快了，吗？(雾
+没想到二十多天过去了还是缓慢前进。~~不过也快了，吗？(雾~~
+
+~~想问为什么不用python + vibe coding ? 因为matlab + simulink 也是 vibe 来的(bushi~~
