@@ -7,7 +7,7 @@ tag:
   - unionpay
   - 白嫖
 categories:
-  - Share
+  - Daily
 cover: https://exafunction.github.io/public/changelog/windsurf/1.12.43/gpt-5.2.png
 description: "windsurf2025年12月21号还是可以白嫖freetrial"
 ---
