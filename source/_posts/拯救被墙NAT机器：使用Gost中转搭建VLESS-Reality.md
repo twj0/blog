@@ -211,7 +211,7 @@ sing-box generate reality-keypair # 记下PrivateKey和PublicKey
       "listen_port": 10250,
       "users": [
         {
-          "uuid": "76341be8-8eaa-43d3-a005-8308f241ae8c",
+          "uuid": "刚刚生成的UUID",
           "flow": "xtls-rprx-vision"
         }
       ],
@@ -224,7 +224,7 @@ sing-box generate reality-keypair # 记下PrivateKey和PublicKey
             "server": "www.microsoft.com",
             "server_port": 443
           },
-          "private_key": "GA9C6iO5jjtcPJG......",
+          "private_key": "刚刚生成的PrivateKey",
           "short_id": [""]
         }
       }
