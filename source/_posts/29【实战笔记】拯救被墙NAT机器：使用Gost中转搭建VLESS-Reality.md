@@ -13,7 +13,7 @@ tags:
   - Docker
 categories:
   - Tech
-cover: https://gost.run/images/load-balancing-4.png
+cover: https://img2022.cnblogs.com/blog/2868943/202205/2868943-20220524144644076-1620710430.png
 description: 手中有一台性能不错的NAT VPS，但因为IP被GFW阻断导致无法连接？本文将教你利用一台境外"白名单"机器作为跳板，通过Gost流量转发技术"复活"这台机器，实现SSH稳定连接，并成功搭建VLESS-Reality-Vision节点。从架构原理到实战部署，从SSH隧道打通到节点深度调试，这是一次完整的"救砖"操作指南。
 author: GLM4.6
 top_img: https://gost.run/images/load-balancing-1.png
