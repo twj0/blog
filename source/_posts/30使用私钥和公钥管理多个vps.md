@@ -1,6 +1,6 @@
 ---
 title: 进阶指南：如何像老司机一样管理多台VPS？（配置别名与密钥复用）
-date: 2025-01-15 11:00:00
+date: 2026-01-15 11:00:00
 tags:
   - VPS
   - SSH
@@ -10,7 +10,7 @@ tags:
   - Config
 categories:
   - Tech
-cover: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800
+cover: https://abelsu7.top/2019/04/28/setup-remote-ssh-login/cover.png
 description: 详尽的多台VPS管理指南,从SSH密钥复用到Config配置文件,教你优雅地管理云端服务器
 ---
 

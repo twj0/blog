@@ -9,7 +9,7 @@ tags:
   - 安全
 categories:
   - Tech
-cover: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800
+cover: https://img2022.cnblogs.com/blog/2173981/202208/2173981-20220828153529668-2098452406.png
 description: 详尽的VPS登录指南,从基础的密码登录到进阶的SSH密钥免密配置,帮助新手快速掌握VPS连接技巧
 ---
 
