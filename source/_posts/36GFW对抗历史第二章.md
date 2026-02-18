@@ -12,7 +12,6 @@ tags:
   - 网络安全
 categories:
   - Tech
-  - GFW对抗史
 cover: https://gfw.report/publications/sp25/figures/two-firewalls-.png
 description: 传统VPN的落幕，标志着翻墙协议从"企业级安全"向"对抗级隐蔽"的范式转变。本章将深入剖析Shadowsocks、SSR、V2Ray、Trojan等代理协议的技术原理，揭示它们如何在安全性、隐蔽性、速度三个维度上不断进化，以及GFW如何步步紧逼。
 author: GLM4.6

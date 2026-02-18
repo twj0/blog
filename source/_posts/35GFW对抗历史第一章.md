@@ -11,7 +11,6 @@ tags:
   - Shadowsocks
 categories:
   - Tech
-  - GFW对抗史
 cover: https://febers.github.io/%E7%BF%BB%E8%B6%8AGFW%E8%AE%B0/GFW%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84.jpg
 description: 在网络翻墙的历史长河中，传统VPN曾是当之无愧的王者。本文将从安全性、隐蔽性、速度三个维度，深入剖析OpenVPN、WireGuard、IKEv2等传统VPN协议的技术原理，揭示它们为何在中国网络环境下从"神器"沦为"秒封"的存在，以及Shadowsocks如何开启新的时代。
 author: GLM4.6
