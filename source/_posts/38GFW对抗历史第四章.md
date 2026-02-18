@@ -1,6 +1,6 @@
 ---
 title: 【GFW对抗史·第四章】全球审查地图——当"墙"不止一堵
-date: 2025-02-18 20:00:00
+date: 2026-02-18 20:00:00
 tags:
   - GFW
   - 互联网审查
@@ -13,8 +13,7 @@ tags:
   - 翻墙协议
 categories:
   - Tech
-  - GFW对抗史
-cover: https://i.guancha.cn/news/mainland/2021/04/01/20210401143335438.jpg
+cover: https://nournews.ir/media/Photo/25/11/25111101005931_Org.jpg
 description: 你以为只有中国有墙？不。这个星球上，至少有十几个国家在建造、加固、或正在学习建造自己的"数字长城"。本章将带你环游全球，从俄罗斯的TSPU到伊朗的"国家信息网络"，从朝鲜的"光明网"到缅甸的断网抗争，揭示全球互联网审查的全貌与反审查工具的生态。
 author: GLM4.6
 ---
